@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">Baxi Ims</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="email_address">Email Address</string>
+    <string name="password">Password</string>
+    <string name="sign_in_to_your_account">Confirm your log in</string>
+    <string name="log_in">GET STARTED WITH BAXI IMS</string>
+    <string name="continue_to_login">Continue to Login</string>
+    <string name="continuee">Continue</string>
+    <string name="create_an_account">Create an Account</string>
+    <string name="forgot_password">Forgot password</string>
+    <string name="sign_up">SIGN UP</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="firstname">First Name</string>
+    <string name="choose_category_of_product_you_sell">Choose category of product you sell</string>
+    <string name="tech_and_gadget">Tech and Gadget</string>
+    <string name="complete_signup">Complete Signup</string>
+    <string name="select_category">SELECT CATEGORY</string>
+
+    <string name="agree">ok</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <string name="Inventory">Inventory</string>
+    <string name="last_name">Last Name</string>
+    <string name="next">Next</string>
+    <string name="cart">cart</string>
+    <string name="products_count">"Product Count: %1$d"</string>
+    <string name="product_barcode">Product Barcode: 1122334455</string>
+    <string name="product_units">Product In Stock 500 Units</string>
+
+    <string-array name="Gender">
+        <item name="Choose Gender">Select Gender</item>
+        <item name="Male">Male</item>
+        <item name="Female">Female</item>
+    </string-array>
+
+    <string-array name="Category">
+        <item name="Choose Category">Select Category</item>
+        <item name="Supermarket">Supermarket</item>
+        <item name="Minimart">Minimart</item>
+        <item name="Spare Parts">Spare Parts</item>
+        <item name="Groceries">Groceries</item>
+    </string-array>
+</resources>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/calc_first_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter first num"
+        android:inputType="number"
+        />
+
+    <EditText
+        android:id="@+id/calc_second_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter second num"
+        android:inputType="number"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/calc_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add"
+            android:onClick="onAdd"
+            />
+
+        <Button
+            android:id="@+id/calc_sub"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sub"
+            android:onClick="onSub"
+            />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <Button
+            android:id="@+id/calc_div"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Div"
+            android:onClick="onDiv"
+            />
+
+        <Button
+            android:id="@+id/calc_mul"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mul"
+            android:onClick="onMul"
+            />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/calc_tototal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textColor="@android:color/background_dark"
+        />
+
+</LinearLayout>

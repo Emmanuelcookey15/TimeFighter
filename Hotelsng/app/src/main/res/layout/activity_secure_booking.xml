@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FAFAFA"
+    tools:context=".activities.SecureBookingActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/secure_hotels_bookings_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/PPR_FULL_WHITE"
+        android:theme="@style/ToolBarStyle"
+        app:layout_collapseMode="pin"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_secure_booking"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/secure_hotels_bookings_toolbar"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:id="@+id/bookings_info_desk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                android:text="Book online or call +2347008808800"
+                android:textColor="#788996"
+                />
+
+
+            <TextView
+                android:id="@+id/booking_details_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Booking Details"
+                android:textColor="#084482"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/bookings_info_desk"
+                />
+
+            <TextView
+                android:id="@+id/edit_booking_details"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:text="Edit booking details"
+                android:textColor="#084482"
+                android:textSize="12sp"
+                android:layout_alignBaseline="@+id/booking_details_title"
+                android:layout_toRightOf="@+id/booking_details_title"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:gravity="end"
+                />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/booking_details"
+                xmlns:card_view="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/booking_details_title"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                card_view:cardElevation="4dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    >
+
+                    <TextView
+                        android:id="@+id/bookings_hotel_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hotel name"
+                        android:textSize="18sp"
+                        android:textColor="@color/text_black"/>
+
+                    <TextView
+                        android:id="@+id/bookings_hotel_room_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Hotel room name"
+                        android:textColor="#788996"
+                        android:textSize="14sp"
+                        android:layout_below="@+id/bookings_hotel_name"
+                        />
+
+
+                    <View
+                        android:id="@+id/booking_fist_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_below="@+id/bookings_hotel_room_name"
+                        android:background="#EAEAEA"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/rooms_booking_time"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:layout_below="@+id/booking_fist_view"
+                        android:background="@color/PPR_FULL_WHITE"
+                        android:orientation="horizontal">
+
+                        <RelativeLayout
+                            android:id="@+id/room_check_in_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            >
+
+
+                            <TextView
+                                android:id="@+id/check_in_statement"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CHECK IN"
+                                android:textSize="12sp"
+                                android:textColor="#788996"
+                                android:layout_centerHorizontal="true"
+                                />
+
+
+                            <TextView
+                                android:id="@+id/main_check_in_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/check_in_statement"
+                                android:text="Fri, 25th Oct 2019"
+                                android:textSize="16sp"
+                                android:textColor="@color/text_black"
+                                android:layout_centerHorizontal="true"
+                                />
+
+
+                        </RelativeLayout>
+
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:background="@drawable/arrow_front"
+                            android:scaleType="centerCrop"
+                            android:padding="10dp"
+                            />
+
+                        <RelativeLayout
+                            android:id="@+id/room_check_out_date"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1">
+
+
+                            <TextView
+                                android:id="@+id/check_out_statement"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="CHECK OUT"
+                                android:textSize="12sp"
+                                android:textColor="#788996"
+                                android:layout_centerHorizontal="true"
+                                />
+
+
+                            <TextView
+                                android:id="@+id/main_check_out_date"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/check_out_statement"
+                                android:text="Fri, 25th Oct 2019"
+                                android:textSize="16sp"
+                                android:textColor="@color/text_black"
+                                android:layout_centerHorizontal="true"
+                                />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                    <View
+                        android:id="@+id/booking_second_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="12dp"
+                        android:layout_below="@+id/rooms_booking_time"
+                        android:background="#EAEAEA"/>
+
+                    <TextView
+                        android:id="@+id/room_and_night_details"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:gravity="end"
+                        android:text="1 room and two night"
+                        android:textColor="#788996"
+                        android:textSize="14sp"
+                        android:layout_below="@+id/booking_second_view"
+                        />
+
+
+                    <LinearLayout
+                        android:id="@+id/ll_booking_total_price"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_below="@+id/room_and_night_details"
+                        android:weightSum="2">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Total"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/text_black"/>
+
+                        <TextView
+                            android:id="@+id/sum_total_bookings"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="20,000"
+                            android:gravity="end"
+                            android:textColor="@color/text_black"
+                            android:textSize="16sp"
+                            android:layout_below="@+id/bookings_hotel_name"
+                            />
+
+                    </LinearLayout>
+
+
+                </RelativeLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+
+
+            <TextView
+                android:id="@+id/user_booking_details_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                android:text="Your Details"
+                android:textColor="#084482"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:layout_below="@+id/booking_details"
+                />
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/user_booking_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/user_booking_details_title"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
+                app:cardElevation="4dp">
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:padding="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/user_booking_first_name_ll"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <Spinner
+                            android:id="@+id/user_booking_title_name"
+                            android:layout_width="80dp"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/spinner_background_secured"
+                            android:text="Mr" />
+
+                        <EditText
+                            android:id="@+id/user_booking_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edit_border"
+                            android:hint="Firstname" />
+
+
+                    </LinearLayout>
+
+
+                    <EditText
+                        android:id="@+id/user_booking_last_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_booking_first_name_ll"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_border"
+                        android:hint="Lastname" />
+
+                    <EditText
+                        android:id="@+id/user_booking_phone_num"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_booking_last_name"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_border"
+                        android:hint="+234"
+                        android:inputType="phone" />
+
+                    <EditText
+                        android:id="@+id/user_booking_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_booking_phone_num"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_border"
+                        android:hint="Email address"
+                        android:inputType="textEmailAddress" />
+
+                    <CheckBox
+                        android:id="@+id/booking_reservation_by_who_check"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_booking_email"
+                        android:layout_marginBottom="10dp" />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/user_booking_email"
+                        android:layout_alignBaseline="@+id/booking_reservation_by_who_check"
+                        android:layout_toEndOf="@+id/booking_reservation_by_who_check"
+                        android:layout_toRightOf="@+id/booking_reservation_by_who_check"
+                        android:text="I am making this reservation on behalf someone else" />
+
+
+                    <RelativeLayout
+                        android:id="@+id/bookings_on_behalf"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/booking_reservation_by_who_check"
+                        android:layout_margin="10dp"
+                        android:visibility="gone">
+
+                        <EditText
+                            android:id="@+id/user_booking_onbehalf_first_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edit_border"
+                            android:hint="Firstname" />
+
+
+                        <EditText
+                            android:id="@+id/user_booking_onbehalf_last_name"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/user_booking_onbehalf_first_name"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edit_border"
+                            android:hint="Lastname" />
+
+                        <EditText
+                            android:id="@+id/user_booking_onbehalf_phone_num"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/user_booking_onbehalf_last_name"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edit_border"
+                            android:hint="+234"
+                            android:inputType="phone" />
+
+                        <EditText
+                            android:id="@+id/user_booking_onbehalf_email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/user_booking_onbehalf_phone_num"
+                            android:layout_margin="5dp"
+                            android:background="@drawable/edit_border"
+                            android:hint="Email address"
+                            android:inputType="textEmailAddress" />
+
+
+                    </RelativeLayout>
+
+
+                    <EditText
+                        android:id="@+id/booking_additional_comment"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/bookings_on_behalf"
+                        android:layout_margin="5dp"
+                        android:background="@drawable/edit_border"
+                        android:gravity="top|left"
+                        android:hint="Enter Additional Comments"
+                        android:inputType="textMultiLine"
+                        android:lines="8"
+                        android:maxLines="10"
+                        android:minLines="6"
+                        android:scrollbars="vertical" />
+
+                </RelativeLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <Button
+                android:id="@+id/btn_pay_now"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                android:background="@drawable/blue_btn_background"
+                android:backgroundTint="@color/green"
+                android:text="Pay Now"
+                android:textAllCaps="false"
+                android:textColor="@color/white_color"
+                android:layout_below="@+id/user_booking_details"
+                />
+
+            <Button
+                android:id="@+id/btn_pay_at_hotel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/white_btn_background_conered"
+                android:text="Pay at hotel"
+                android:textAllCaps="false"
+                android:textColor="@color/fastBlue"
+                android:layout_below="@+id/btn_pay_now"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+</RelativeLayout>

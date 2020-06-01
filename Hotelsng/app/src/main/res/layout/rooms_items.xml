@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:padding="5dp"
+    card_view:cardCornerRadius="5dp"
+    card_view:cardElevation="4dp">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/room_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:scaleType="centerCrop"
+            android:layout_marginBottom="15dp"
+            />
+
+        <TextView
+            android:id="@+id/room_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Comfort Cottage"
+            android:textColor="@color/text_black"
+            android:textSize="16sp"
+            android:layout_below="@+id/room_image"
+            android:layout_alignStart="@+id/room_image"
+            android:layout_alignLeft="@+id/room_image"
+            android:layout_toLeftOf="@+id/room_current_price"
+            android:layout_toStartOf="@+id/room_current_price"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="20dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₦"
+            android:textSize="16sp"
+            android:textColor="@color/text_black"
+            android:layout_centerVertical="true"
+            android:layout_below="@+id/room_image"
+            android:layout_toLeftOf="@+id/room_current_price"
+            android:layout_toStartOf="@+id/room_current_price" />
+
+        <TextView
+            android:id="@+id/room_current_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="45,000"
+            android:textSize="16sp"
+            android:textColor="@color/text_black"
+            android:layout_below="@+id/room_image"
+            android:layout_alignEnd="@+id/room_image"
+            android:layout_alignRight="@+id/room_image"
+            android:layout_marginRight="10dp"
+            />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="per night"
+            android:textSize="12sp"
+            android:layout_below="@+id/room_current_price"
+            android:layout_alignEnd="@+id/room_current_price"
+            android:layout_alignRight="@+id/room_current_price"
+            />
+
+
+            <TextView
+                android:id="@+id/room_flags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="per night"
+                android:drawablePadding="5dp"
+                android:textSize="12sp"
+                android:layout_marginTop="20dp"
+                android:layout_below="@+id/room_name"
+                android:layout_alignStart="@+id/room_name"
+                android:layout_alignLeft="@+id/room_name"
+                android:visibility="gone"
+                />
+
+
+        <Button
+            android:id="@+id/btn_select_room"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:text="Select Room"
+            android:textColor="@color/PPR_FULL_WHITE"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/blue_btn_background"
+            android:layout_below="@+id/room_current_price"
+            android:layout_alignEnd="@+id/room_current_price"
+            android:layout_alignRight="@+id/room_current_price"
+            />
+
+
+        <LinearLayout
+            android:id="@+id/book_layout_room"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/room_current_price"
+            android:layout_alignEnd="@+id/room_current_price"
+            android:layout_alignRight="@+id/room_current_price"
+            android:visibility="invisible"
+            >
+
+            <Button
+                android:id="@+id/subtract_button_room"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_btn_background"
+                android:text="-"
+                android:textColor="@color/white_color"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                />
+
+
+            <TextView
+                android:id="@+id/room_count_txt"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="1"
+                android:textColor="@color/text_black"
+                android:textSize="26sp"
+                android:textStyle="bold"
+                />
+
+
+            <Button
+                android:id="@+id/add_button_room"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:background="@drawable/blue_btn_background"
+                android:text="+"
+                android:textColor="@color/white_color"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

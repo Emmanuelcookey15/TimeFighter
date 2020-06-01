@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    android:background="@color/PPR_FULL_WHITE"
+    android:elevation="3dp"
+    android:padding="3dp">
+
+    <TextView
+        android:id="@+id/reviewers_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Ifeoluwasimi Olusola"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <Button
+        android:id="@+id/reviews_rating"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="#2AB867"
+        android:text="8.2"
+        android:textColor="@color/PPR_FULL_WHITE"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/review_excellence"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="Excellent"
+        app:layout_constraintEnd_toStartOf="@+id/reviews_rating"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/reviewed_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="19 April, 2019"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="@+id/reviewers_name"
+        app:layout_constraintTop_toBottomOf="@+id/reviewers_name" />
+
+    <TextView
+        android:id="@+id/the_reviews"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="16dp"
+        android:text="Barcruse hotel is a 5 star hotel located at a
+        luxirious and secure hotel. Free wifi is available throughout the premises."
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/reviews_rating"
+        app:layout_constraintStart_toStartOf="@+id/reviewed_date"
+        app:layout_constraintTop_toBottomOf="@+id/reviewed_date"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

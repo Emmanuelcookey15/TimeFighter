@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Routine Check</string>
+    <string name="routine_name">Routine Name</string>
+    <string name="routine_description">Short Description</string>
+</resources>

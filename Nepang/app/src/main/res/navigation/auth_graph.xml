@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_graph"
+    app:startDestination="@id/topUpFragment">
+
+
+    <fragment
+        android:id="@+id/topUpFragment"
+        android:name="com.nepa.ng.ui.home.TopUpFragment"
+        android:label="TopUpFragment"
+        tools:layout="@layout/fragment_top_up"/>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.nepa.ng.ui.auth.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.nepa.ng.ui.auth.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_numberSignUp"
+            app:destination="@id/numberSignUp" />
+    </fragment>
+    <fragment
+        android:id="@+id/numberSignUp"
+        android:name="com.nepa.ng.ui.auth.NumberSignUp"
+        android:label="NumberSignUp"
+        tools:layout="@layout/fragment_number_sign_up"
+        >
+        <action
+            android:id="@+id/action_numberSignUp_to_finalSignUpFragment"
+            app:destination="@id/finalSignUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/finalSignUpFragment"
+        android:name="com.nepa.ng.ui.auth.FinalSignUpFragment"
+        android:label="fragment_final_sign_up"
+        tools:layout="@layout/fragment_final_sign_up" />
+
+
+</navigation>

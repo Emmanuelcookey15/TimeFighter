@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white_color" />
+            <corners android:radius="7dp" />
+            <stroke android:width="1dip" android:color="@color/shape_border_active"/>
+        </shape>
+    </item>
+    <item android:left="45dp">
+        <bitmap
+            android:gravity="center_vertical|left"
+            android:src="@drawable/ic_spinner_dropdown" />
+    </item>
+</layer-list>

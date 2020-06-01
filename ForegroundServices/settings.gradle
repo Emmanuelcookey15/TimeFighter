@@ -1,0 +1,2 @@
+rootProject.name='Foreground Services'
+include ':app'

@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="ng.nepa.app.fragments.electricitypayment.BuyElectricityFragment">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_barLayout_electricity"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:elevation="7dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/electricity_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:layout_collapseMode="pin"
+                app:contentInsetLeft="15dp"
+                app:contentInsetStart="15dp">
+
+        </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/electricity_ns"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:layout_below="@+id/app_barLayout_electricity"
+            android:fillViewport="true">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/ns_frag_electricity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardElevation="4dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        >
+
+
+                        <LinearLayout
+                            android:id="@+id/full_buy_eletricity_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="40dp"
+                            android:layout_marginBottom="40dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Buy Electricity"
+                                android:textStyle="bold"
+                                android:textSize="18sp"
+                                />
+
+
+                            <ImageView
+                                android:id="@+id/selected_vendor_logo"
+                                android:layout_width="120dp"
+                                android:layout_height="100dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginStart="20dp"
+                                />
+
+
+                            <RadioGroup
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="17dp"
+                                android:layout_marginStart="20dp"
+                                android:weightSum="2"
+                                android:orientation="horizontal"
+                                android:id="@+id/radioGroup">
+
+                                <RadioButton
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Prepaid"
+                                    android:id="@+id/radio_prepaid"
+                                    android:buttonTint="@color/colorPrimary"
+                                    android:checked="true"
+                                    android:textSize="16dp" />
+
+
+                            </RadioGroup>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Meter Number"
+                                android:textSize="16sp"
+                                android:textColor="#4F4F4F"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="5dp"
+                                />
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/pay_meter_number"
+                                style="@style/StyleBlueBorder"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:imeOptions="actionNext"
+                                android:inputType="number"
+                                android:paddingStart="10dp"
+                                android:hint="221223"
+                                android:textAllCaps="false"
+                                android:textColor="#828282"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Amount"
+                                android:textSize="16sp"
+                                android:textColor="#4F4F4F"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="5dp"
+                                />
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/payment_amount"
+                                style="@style/StyleBlueBorder"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:inputType="number"
+                                android:imeOptions="actionNext"
+                                android:paddingStart="10dp"
+                                android:hint="Amount"
+                                android:textAllCaps="false"
+                                android:textColor="#828282"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Email"
+                                android:textSize="16sp"
+                                android:textColor="#4F4F4F"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="5dp"
+                                />
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/payment_email"
+                                style="@style/StyleBlueBorder"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:imeOptions="actionNext"
+                                android:inputType="textEmailAddress"
+                                android:paddingStart="10dp"
+                                android:hint="Email"
+                                android:textAllCaps="false"
+                                android:textColor="#828282"
+                                />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:text="Phone Number"
+                                android:textSize="16sp"
+                                android:textColor="#4F4F4F"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginBottom="5dp"
+                                />
+
+
+                            <AutoCompleteTextView
+                                android:id="@+id/payment_phone_number"
+                                style="@style/StyleBlueBorder"
+                                android:layout_width="match_parent"
+                                android:layout_height="48dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="5dp"
+                                android:layout_marginEnd="20dp"
+                                android:imeOptions="actionDone"
+                                android:inputType="phone"
+                                android:paddingStart="10dp"
+                                android:hint="Phone Number"
+                                android:textAllCaps="false"
+                                android:textColor="#828282"
+                                />
+
+                            <RelativeLayout
+                                android:id="@+id/payment_submit_full_view"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <Button
+                                    android:id="@+id/payment_submit"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginTop="20dp"
+                                    android:layout_marginLeft="20dp"
+                                    android:layout_marginRight="20dp"
+                                    style="@style/StyleGreyBorder"
+                                    android:background="@color/colorPrimary"
+                                    android:text="Submit"
+                                    android:textSize="18sp"
+                                    android:textAllCaps="false"
+                                    android:textColor="@android:color/white"
+                                    />
+
+                                <ProgressBar
+                                    android:id="@+id/progress"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="22dp"
+                                    android:visibility="gone"
+                                    android:indeterminateTintMode="src_in"
+                                    android:indeterminateTint="#FFFFFF"
+                                    android:layout_centerInParent="true"/>
+
+
+
+                            </RelativeLayout>
+
+
+                            <Button
+                                android:id="@+id/payment_cancel"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"
+                                style="@style/StyleBlueBorder"
+                                android:text="Cancel"
+                                android:textSize="18dp"
+                                android:textAllCaps="false"
+                                />
+
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+
+                </androidx.cardview.widget.CardView>
+
+
+                <LinearLayout
+                    android:id="@+id/footer_electricity"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/ns_frag_electricity"
+                    android:paddingTop="15dp"
+                    android:background="#F9F9F9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subscribe_electricity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Subscribe"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="25dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ic_twitter"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_twitter"
+                            android:layout_marginEnd="20dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/ic_facebook"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_facebook"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/ic_linkden"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_linkden"
+                            android:layout_marginStart="20dp"
+                            />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Terms Of Service"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Privacy Policy"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="\@2020 nepa.ng"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="25dp"
+                        />
+
+                </LinearLayout>
+
+
+
+            </RelativeLayout>
+
+
+
+
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+
+
+
+
+</layout>

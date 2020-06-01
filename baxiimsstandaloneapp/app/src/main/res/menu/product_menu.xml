@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item android:id="@+id/vertical_view"
+        android:title="vertical"
+        android:icon="@drawable/ic_vertical_item"
+        app:showAsAction="always"
+        android:orderInCategory="1"
+        />
+
+    <item android:title="horizontal"
+        android:icon="@drawable/ic_horizotal_view"
+        app:showAsAction="always"
+        android:id="@+id/horizotal_view"/>
+
+
+
+</menu>

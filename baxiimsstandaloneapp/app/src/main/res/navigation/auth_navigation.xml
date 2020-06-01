@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_navigation"
+    app:startDestination="@id/navigate_login">
+
+    <fragment
+        android:id="@+id/navigate_login"
+        android:name="com.capricorn.baxims.ui.auth.LoginFragment"
+        android:label=""
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_navigate_login_to_navigate_signup"
+            app:destination="@id/navigate_signup"
+            app:enterAnim="@anim/slide_out"
+            app:exitAnim="@anim/fragment_fade_exit"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_navigate_login_to_navigate_forgot"
+            app:destination="@id/navigate_forgot" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigate_signup"
+        android:name="com.capricorn.baxims.ui.auth.SignupFragment"
+        android:label=""
+        tools:layout="@layout/fragment_signup" >
+        <action
+            android:id="@+id/action_navigate_signup_to_navigate_signup_category"
+            app:destination="@id/navigate_signup_category"
+            app:enterAnim="@anim/slide_in_top" />
+        <action
+            android:id="@+id/action_navigate_signup_to_navigate_login"
+            app:destination="@id/navigate_login"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_in" />
+        <action
+            android:id="@+id/action_navigate_signup_to_authSuccessfull"
+            app:destination="@id/authSuccessfull"
+            app:enterAnim="@anim/slide_in_top" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigate_signup_category"
+        android:name="com.capricorn.baxims.ui.auth.SignupCategory"
+        android:label=""
+        tools:layout="@layout/fragment_signup_category" >
+        <action
+            android:id="@+id/action_navigate_signup_category_to_navigate_signup"
+            app:destination="@id/navigate_signup" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigate_forgot"
+        android:name="com.capricorn.baxims.ui.auth.ForgotPassword"
+        android:label=""
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_navigate_forgot_to_navigate_login"
+            app:destination="@id/navigate_login" />
+    </fragment>
+    <fragment
+        android:id="@+id/authSuccessfull"
+        android:name="com.capricorn.baxims.ui.auth.AuthSuccessfull"
+        android:label=""
+        tools:layout="@layout/fragment_auth_successfull" />
+</navigation>

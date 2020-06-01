@@ -1,0 +1,121 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'com.google.gms.google-services'
+
+// Apply the Crashlytics Gradle plugin
+apply plugin: 'com.google.firebase.crashlytics'
+
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.3"
+
+    defaultConfig {
+        applicationId "ng.hotels.booking.app"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 2
+        versionName "1.0.1"
+        multiDexEnabled true
+
+        buildConfigField 'String', "END_POINT", project.properties['END_POINT']
+        buildConfigField 'String', "GEO_END_POINT", project.properties['GEO_END_POINT']
+        buildConfigField 'String', "GRANT_TYPE", project.properties['GRANT_TYPE']
+        buildConfigField 'String', "CLIENT_ID", project.properties['CLIENT_ID']
+        buildConfigField 'String', "CLIENT_SECRET", project.properties['CLIENT_SECRET']
+        buildConfigField 'String', "SCOPE", project.properties['SCOPE']
+        buildConfigField 'String', "Rave_PublicKey", project.properties['Rave_PublicKey']
+        buildConfigField 'String', "Rave_EncryptionKey", project.properties['Rave_EncryptionKey']
+        buildConfigField 'String', "key", project.properties['key']
+        buildConfigField 'String', "initVector", project.properties['initVector']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
+    implementation "androidx.legacy:legacy-preference-v14:1.0.0"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    implementation 'com.google.code.gson:gson:2.8.6'
+
+    implementation 'com.oluwatobi.android:peppercolor:2.1'
+
+    // Add the Firebase SDK for Core
+    implementation 'com.google.firebase:firebase-core:17.4.0'
+
+    implementation 'com.google.android.gms:play-services-auth:18.0.0'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+
+    // Add the Firebase SDK for Google Analytics
+    implementation 'com.google.firebase:firebase-analytics:17.4.0'
+    implementation 'com.google.android.gms:play-services-analytics:17.0.0'
+
+    // Add the Firebase SDK for Firebase function.
+    implementation 'com.google.firebase:firebase-functions:19.0.2'
+
+    // Add the Firebase SDK for Crashlytics.
+    implementation 'com.google.firebase:firebase-crashlytics:17.0.0'
+
+    //Dependency For Firebase Cloud Messaging
+    implementation 'com.google.firebase:firebase-messaging:20.1.7'
+
+
+    //Flutterwave Ravepay SDK
+    implementation 'com.github.Flutterwave:rave-android:1.0.40'
+
+    // Monnify SDk
+    implementation 'com.teamapt.monnify.sdk:monnify-android-sdk:1.0.16'
+
+    //Dependency for glide library
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
+    //Dependency for retrofit library
+    implementation 'com.squareup.retrofit2:retrofit:2.7.1'
+    implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
+
+
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.4.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.4.0'
+    implementation 'com.google.android.material:material:1.1.0'
+
+
+    //Dependency for Expandable Textview
+    implementation 'com.ms-square:expandableTextView:0.1.4'
+
+    //Dependency for Circle Indicator
+    implementation 'me.relex:circleindicator:1.3.2'
+
+    implementation 'com.github.Emmanuelcookey15:TelexLibrary:0.1.0'
+
+}

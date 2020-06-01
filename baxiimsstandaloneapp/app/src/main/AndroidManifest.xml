@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.capricorn.baxims">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="UnusedAttribute">
+        <activity android:name=".ui.dashboard.SearchedResultActivity"></activity>
+        <activity android:name=".ui.dashboard.EditActivity" />
+        <activity android:name=".ui.dashboard.ScannedBarcodeActivity" />
+        <activity android:name=".ui.users.UserContainer" />
+        <activity
+            android:name=".ui.dashboard.ProductDetails"
+            android:theme="@style/AppTheme.ProductTheme" />
+        <activity
+            android:name=".ui.cart.CartContainer"
+            android:theme="@style/AppTheme.ProductTheme" />
+        <activity android:name=".ui.business.BusinessContainer" />
+        <activity
+            android:name=".ui.dashboard.AddProduct"
+            android:theme="@style/AppTheme.ProductTheme"
+            android:windowSoftInputMode="stateHidden" />
+        <activity android:name=".ui.dashboard.DashboardContainer" />
+        <activity
+            android:name=".ui.LuncherActivity"
+            android:theme="@style/AppTheme.SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".ui.auth.AuthContainer" />
+        <activity android:name=".MainActivity" />
+        <activity android:name=".ui.auth.SignupCategory" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+        <meta-data
+            android:name="com.google.android.gms.vision.DEPENDENCIES"
+            android:value="barcode" />
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="${applicationId}.fileprovider"
+            android:exported="false"
+            android:grantUriPermissions="true"
+            tools:replace="android:authorities">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths"
+                tools:replace="android:resource" />
+        </provider>
+    </application>
+
+</manifest>

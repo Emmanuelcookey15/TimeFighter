@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    app:cardCornerRadius="2dp"
+    app:cardElevation="2dp">
+
+    <RelativeLayout
+        android:id="@+id/full_listing_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <FrameLayout
+            android:id="@+id/frame_listing_image"
+            android:layout_width="match_parent"
+            android:layout_height="180dp">
+
+            <ImageView
+                android:id="@+id/hotel_image"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:adjustViewBounds="true"
+                android:scaleType="centerCrop"
+                />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/gradient_image"/>
+
+
+        </FrameLayout>
+
+
+
+
+        <ImageView
+            android:id="@+id/fav_button"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignTop="@+id/frame_listing_image"
+            android:layout_alignRight="@+id/frame_listing_image"
+            android:layout_alignEnd="@+id/frame_listing_image"
+            android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/wish_click"
+            />
+
+
+        <Button
+            android:id="@+id/hotel_rating_list"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignRight="@+id/frame_listing_image"
+            android:layout_alignBottom="@+id/frame_listing_image"
+            android:layout_marginBottom="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginEnd="15dp"
+            android:text="8.2"
+            android:textColor="@color/PPR_FULL_WHITE"
+            android:textSize="14sp"
+            android:background="#2AB867"
+            android:layout_alignEnd="@+id/frame_listing_image" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Rating"
+            android:textColor="@color/white_color"
+            android:textSize="18sp"
+            android:layout_toLeftOf="@+id/hotel_rating_list"
+            android:layout_alignBottom="@+id/frame_listing_image"
+            android:layout_marginBottom="30dp"/>
+        <TextView
+            android:id="@+id/listing_reviews"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:text="Rating"
+            android:textColor="@color/white_color"
+            android:layout_toLeftOf="@+id/hotel_rating_list"
+            android:layout_alignBottom="@+id/frame_listing_image"
+            android:layout_marginBottom="15dp"
+            />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/frame_listing_image"
+            android:padding="12dp">
+
+            <TextView
+                android:id="@+id/hotel_name_list"
+                fontPath="fonts/Lato-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_toStartOf="@+id/price"
+                android:ellipsize="end"
+                android:ems="12"
+                android:singleLine="true"
+                android:maxLines="1"
+                android:textColor="@color/text_black"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                tools:ignore="MissingPrefix"
+                tools:text="Onitsha Holiday Resort Hotels"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/price" />
+
+            <TextView
+                android:id="@+id/hotel_location_list"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hotel_name_list"
+                android:layout_alignParentStart="true"
+                android:layout_toStartOf="@+id/price"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textColor="@color/textLight"
+                android:textSize="12sp"
+                tools:ignore="MissingPrefix"
+                tools:text="ikoyi, Lagos"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/price" />
+
+            <TextView
+                android:id="@+id/price"
+                fontPath="fonts/Lato-Bold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="5dp"
+                android:textColor="@color/text_black"
+                android:textSize="20sp"
+                tools:ignore="MissingPrefix"
+                tools:text="N12,000" />
+
+            <TextView
+                android:id="@+id/per_night"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/price"
+                android:layout_marginEnd="5dp"
+                android:layout_marginTop="-5dp"
+                android:textColor="@color/textLight"
+                android:textSize="11sp"
+                tools:ignore="MissingPrefix"
+                android:text="per night"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="5dp" />
+
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

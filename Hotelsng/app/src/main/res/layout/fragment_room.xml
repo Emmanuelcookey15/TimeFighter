@@ -1,0 +1,161 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#FAFAFA"
+    tools:context="ng.hotels.booking.app.fragments.RoomFragment">
+
+
+
+    <RelativeLayout
+        android:id="@+id/rl_room_sum_prize"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#DBF0FA">
+
+        <TextView
+            android:id="@+id/today_check_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Price"
+            android:textColor="#084482"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:elevation="2dp"
+            />
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/to"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="to"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_toRightOf="@+id/today_check_in"-->
+        <!--            android:layout_centerVertical="true"-->
+
+        <!--            />-->
+
+        <!--        <TextView-->
+        <!--            android:id="@+id/tomorrow_check_out"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:text="Tomorrow"-->
+        <!--            android:textColor="@color/text_black"-->
+        <!--            android:textStyle="bold"-->
+        <!--            android:layout_toRightOf="@+id/to"-->
+        <!--            android:layout_marginLeft="10dp"-->
+        <!--            android:layout_centerVertical="true"-->
+        <!--            android:elevation="2dp"-->
+        <!--            />-->
+
+
+
+
+        <TextView
+            android:id="@+id/total_room_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="18sp"
+            android:textColor="#084482"
+            android:layout_marginRight="20dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₦"
+            android:textSize="18sp"
+            android:textColor="#084482"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/total_room_price"
+            android:layout_toStartOf="@+id/total_room_price" />
+
+
+    </RelativeLayout>
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_final_check_out"
+        android:layout_below="@+id/rl_room_sum_prize">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+
+                <TextView
+                    android:id="@+id/select_for_room"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:paddingBottom="5dp"
+                    android:text="Select Room"
+                    android:textColor="#084482"
+                    android:textStyle="bold"
+                    />
+
+
+                <ProgressBar
+                    android:id="@+id/pb_rooms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_below="@+id/select_for_room"
+                    />
+
+
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_rooms_booking"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/select_for_room"
+                    tools:listitem="@layout/rooms_items"
+                    />
+
+
+            </RelativeLayout>
+
+
+
+        </RelativeLayout>
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <Button
+        android:id="@+id/btn_final_check_out"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_btn_background"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Check Out"
+        android:textColor="@color/PPR_FULL_WHITE"
+        />
+
+
+</RelativeLayout>

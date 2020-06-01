@@ -1,0 +1,2 @@
+rootProject.name='baxi-ims-standalone-app'
+include ':app'

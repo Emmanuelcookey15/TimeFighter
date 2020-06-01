@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.HotelsListingActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/find_hotels_listing_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/PPR_FULL_WHITE"
+        android:theme="@style/ToolBarStyle"
+        app:layout_collapseMode="pin"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        app:contentInsetStartWithNavigation="0dp">
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+<!--    <android.support.v7.widget.SearchView-->
+<!--        android:id="@+id/toolbar_friends_search_new_activity"-->
+<!--        android:background="@color/PPR_FULL_WHITE"-->
+<!--        android:layout_gravity="center"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:layout_below="@+id/find_hotels_listing_toolbar"-->
+<!--        android:layout_margin="16dp"-->
+<!--        android:inputType="text"-->
+<!--        android:queryHint="Search for friends..."-->
+<!--        app:iconifiedByDefault="false"-->
+<!--        app:queryBackground="@android:color/transparent"-->
+<!--        app:searchIcon="@drawable/search_icon"-->
+<!--        app:queryHint="Search for hotels or location"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:baselineAligned="true"-->
+<!--        />-->
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:layout_below="@+id/find_hotels_listing_toolbar"
+        android:paddingTop="4dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <RelativeLayout
+            android:id="@+id/search_results"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="4dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <RelativeLayout
+                android:id="@+id/filter_spinner_rl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white_color">
+
+                <Spinner
+                    android:id="@+id/filter_spinner"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:background="@drawable/spinner_background"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:spinnerMode="dropdown"
+                    />
+
+                <RelativeLayout
+                    android:id="@+id/rl_filter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_alignParentEnd="true">
+
+                    <TextView
+                        android:id="@+id/text_results_sort"
+                        android:layout_width="wrap_content"
+                        android:layout_height="25dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginRight="15dp"
+                        fontPath="fonts/Lato-Regular.ttf"
+                        android:textColor="#788996"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:text="Filter"
+                        tools:ignore="MissingPrefix"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:src="@drawable/ic_filter_hotels"
+                        android:layout_centerVertical="true"
+                        android:layout_toLeftOf="@+id/text_results_sort"
+                        android:layout_toStartOf="@+id/text_results_sort" />
+
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/text_results_count"
+                fontPath="fonts/Lato-Regular.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/filter_spinner_rl"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="-2dp"
+                android:padding="10dp"
+                android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                tools:ignore="MissingPrefix"
+                tools:text="200 results" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/text_results_count"
+                android:animationCache="false"
+                android:clipToPadding="false"
+                android:paddingEnd="3dp"
+                android:paddingStart="3dp"
+                android:scrollbars="vertical"
+                android:scrollingCache="false"
+                tools:listitem="@layout/search_list_item"
+                />
+
+            <ProgressBar
+                android:id="@+id/progress_bar_search"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true" />
+
+            <Button
+                android:id="@+id/back_button"
+                style="?buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/list"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Back"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:visibility="visible"
+                 />
+
+            <TextView
+                android:id="@+id/text_page_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/list"
+                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text=""
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/next_button"
+                style="?buttonBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:layout_below="@+id/list"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Next"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary"
+                android:textSize="18sp"
+                android:visibility="visible"
+                 />
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+</RelativeLayout>

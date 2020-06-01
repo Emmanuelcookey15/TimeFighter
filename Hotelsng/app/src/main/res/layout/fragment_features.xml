@@ -1,0 +1,180 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+    android:background="#FAFAFA"
+    tools:context="ng.hotels.booking.app.fragments.FeaturesFragment">
+
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nsv_feature"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_features"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/single_page_description_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Description"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#084482"
+                />
+
+
+<!--            <TextView-->
+<!--                android:id="@+id/single_page_description"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="12dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:layout_marginStart="5dp"-->
+<!--                android:layout_below="@+id/single_page_description_title"-->
+<!--                android:text="Description"-->
+<!--                android:textSize="14sp"-->
+<!--                android:textColor="#333333"/>-->
+
+
+            <com.ms.square.android.expandabletextview.ExpandableTextView
+                android:id="@+id/single_page_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/single_page_description_title"
+                android:layout_marginTop="12dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginStart="5dp"
+                android:layout_marginRight="5dp"
+                app:animDuration="200"
+                app:maxCollapsedLines="4">
+
+                <TextView
+                    android:id="@id/expandable_text"
+                    fontPath="fonts/Lato-Regular.ttf"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="#333333"
+                    android:textSize="14sp"
+                    tools:ignore="MissingPrefix" />
+
+                <ImageButton
+                    android:id="@id/expand_collapse"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:background="@android:color/transparent"
+                    android:padding="10dp" />
+            </com.ms.square.android.expandabletextview.ExpandableTextView>
+
+
+            <TextView
+                android:id="@+id/single_page_amenities_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="22dp"
+                android:layout_below="@+id/single_page_description"
+                android:text="Amenities"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#084482"
+                />
+
+
+            <HorizontalScrollView
+                android:id="@+id/single_page_amenities"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="27dp"
+                android:layout_below="@+id/single_page_amenities_title">
+
+                <include
+                    android:id="@+id/include2"
+                    layout="@layout/amenities_items"
+                    />
+
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/single_page_policy_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_below="@+id/single_page_amenities"
+                android:text="Hotel Policy"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#084482"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="18dp"
+                android:layout_below="@+id/single_page_policy_title"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:id="@+id/check_in"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check in: from 9:00am"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/check_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Check out: from 12:00pm"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/check_in_payment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Payment: Cash, Cards"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    />
+
+                <TextView
+                    android:id="@+id/check_in_cancellation"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Cancellation: Free 24hrs cancellation"
+                    android:layout_margin="5dp"
+                    android:textSize="14sp"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <Button
+        android:id="@+id/btn_features"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_btn_background"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
+        android:text="Select Room"
+        android:textColor="@color/PPR_FULL_WHITE"
+        />
+
+
+</RelativeLayout>

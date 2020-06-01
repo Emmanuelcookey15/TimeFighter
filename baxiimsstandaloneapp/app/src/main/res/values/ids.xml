@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="navigate_login" type="id"/>
+    <item name="navigate_signup" type="id"/>
+    <item name="navigate_forgot" type="id"/>
+    <item name="navigate_signup_category" type="id"/>
+</resources>

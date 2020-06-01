@@ -1,0 +1,686 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/facilities_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:baselineAligned="false"
+    android:orientation="horizontal">
+
+    <RelativeLayout
+        android:id="@+id/internet_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_internet_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_wifi"
+                android:tint="#00AEFF" />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            fontPath="fonts/Lato-Light.ttf"
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_internet_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:text="@string/wifi"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:ignore="MissingPrefix" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/restaurant_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_restuatrant_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+            <ImageView
+                android:id="@+id/restaurant"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_restaurant"
+                android:tint="#00AEFF" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/restaurant_text"
+            fontPath="fonts/Lato-Light.ttf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_restuatrant_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:text="Restaurant"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:ignore="MissingPrefix" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/electricity_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_electricity_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="25dp"
+                android:layout_height="23dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_electricity"
+                android:tint="#00AEFF" />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_electricity_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:text="@string/light"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:text="@string/light"
+            tools:ignore="MissingPrefix" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bar_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_bar_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+            <ImageView
+                android:id="@+id/imageView5"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_bar"
+                android:tint="#00AEFF"
+                android:background="#B6E1F5" />
+
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            fontPath="fonts/Lato-Light.ttf"
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_bar_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:text="@string/bar_lounge"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:text="@string/bar_lounge"
+            tools:ignore="MissingPrefix" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/gym_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_gym_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+            <ImageView
+                android:id="@+id/gym"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_gym"
+                android:tint="#00AEFF" />
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            fontPath="fonts/Lato-Light.ttf"
+            android:id="@+id/gym_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_gym_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Gym"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:ignore="MissingPrefix" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pool_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_pool_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/imageView6"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_pool"
+                android:tint="#00AEFF"/>
+
+        </RelativeLayout>
+
+
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_pool_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Pool"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp"
+            tools:ignore="MissingPrefix" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/parking_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp">
+
+        <RelativeLayout
+            android:id="@+id/image_parking_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/amenities_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_parking"
+                android:tint="#00AEFF"
+                />
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/amenities_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_parking_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Parking"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/security_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+       >
+
+        <RelativeLayout
+            android:id="@+id/image_security_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/security_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_security"
+                android:tint="#00AEFF"
+                />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/security_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_security_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Security"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/air_conditioning_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_air_condition_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/air_condition_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_aircondition"
+                android:tint="#00AEFF"
+                />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/air_condition_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_air_condition_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Air Condition"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/laundry_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_laundry_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/laundry_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_laundry"
+                android:tint="#00AEFF"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/laundry_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_laundry_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Laundry"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/room_service_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_room_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/room_service_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_roomservice"
+                android:tint="#00AEFF"
+                />
+
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/room_service_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_room_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Room Service"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/refrigerator_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_refrigerator_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/refrigerator_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_refrigerator"
+                android:tint="#00AEFF"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/refrigerator_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_refrigerator_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Refrigerator"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/television_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_television_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/television_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_television"
+                android:tint="#00AEFF"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/television_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_television_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Television"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/telephone_layout"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        >
+
+        <RelativeLayout
+            android:id="@+id/image_telephone_layout"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="#B6E1F5">
+
+
+            <ImageView
+                android:id="@+id/telephone_image"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_telephone"
+                android:tint="#00AEFF"
+                />
+
+        </RelativeLayout>
+
+
+        <TextView
+            android:id="@+id/telephone_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/image_telephone_layout"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:ems="8"
+            android:singleLine="true"
+            android:maxLines="1"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Telephone"
+            android:textColor="#4F4F4F"
+            android:textSize="12sp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
+
+

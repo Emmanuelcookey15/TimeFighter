@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    android:padding="10dp"
+    tools:context=".fragments.FavouritesFragment">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_fav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:animationCache="false"
+        android:clipToPadding="false"
+        android:paddingEnd="3dp"
+        android:paddingStart="3dp"
+        android:scrollbars="vertical"
+        android:scrollingCache="false"
+        android:visibility="gone"
+        tools:listitem="@layout/fav_list_item"
+        />
+
+
+    <RelativeLayout
+        android:id="@+id/empty_fav"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <ImageView
+            android:id="@+id/fav_image_none"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/favourite_full"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="23dp"
+            android:text="There are no hotels in your wishlist"
+            android:textColor="#084482"
+            android:textSize="18sp"
+            android:layout_below="@+id/fav_image_none"
+            android:gravity="center"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>

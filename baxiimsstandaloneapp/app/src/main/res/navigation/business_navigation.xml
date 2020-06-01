@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/business_navigation"
+    app:startDestination="@id/business">
+
+    <fragment
+        android:id="@+id/addOutlet"
+        android:name="com.capricorn.baxims.ui.business.AddOutlet"
+        android:label="fragment_add_outlet"
+        app:popUpToInclusive="true"
+        tools:layout="@layout/fragment_add_outlet" >
+        <action
+            android:id="@+id/action_addOutlet_to_outlet"
+            app:destination="@id/outlet" />
+        <argument
+            android:name="domain"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/outlet"
+        android:name="com.capricorn.baxims.ui.business.Outlet"
+        android:label="fragment_outlet"
+        tools:layout="@layout/fragment_outlet" >
+        <action
+            android:id="@+id/action_outlet_to_addOutlet"
+            app:destination="@id/addOutlet"
+            />
+        <action
+            android:id="@+id/action_outlet_to_business"
+            app:destination="@id/business" />
+        <argument
+            android:name="domain"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/business"
+        android:name="com.capricorn.baxims.ui.business.Business"
+        android:label="fragment_business"
+        tools:layout="@layout/fragment_business" >
+        <action
+            android:id="@+id/action_business_to_addBusiness"
+            app:destination="@id/addBusiness"
+            app:enterAnim="@anim/slide_out"
+          />
+        <action
+            android:id="@+id/action_business_to_outlet"
+            app:destination="@id/outlet"
+             />
+        <argument
+            android:name="domain"
+            app:argType="string"
+            app:nullable="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBusiness"
+        android:name="com.capricorn.baxims.ui.business.AddBusiness"
+        android:label="fragment_add_business"
+        tools:layout="@layout/fragment_add_business" >
+        <action
+            android:id="@+id/action_addBusiness_to_business"
+            app:destination="@id/business"
+            app:enterAnim="@anim/slide_in"
+            app:popUpTo="@id/business"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>

@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "276759922058",
+    "firebase_url": "https://hng-android-app-92aec.firebaseio.com",
+    "project_id": "hng-android-app-92aec",
+    "storage_bucket": "hng-android-app-92aec.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276759922058:android:5c54912d04604b3e",
+        "android_client_info": {
+          "package_name": "ng.hotels.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276759922058-uol0druhn89n30d370lqqb3tonngsbbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBASnoCis7wyLxJZUkywGr4Fm5dsZA5v6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276759922058-uol0druhn89n30d370lqqb3tonngsbbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:276759922058:android:eab6d9a8b608f13c5eb473",
+        "android_client_info": {
+          "package_name": "ng.hotels.booking.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "276759922058-uol0druhn89n30d370lqqb3tonngsbbc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBASnoCis7wyLxJZUkywGr4Fm5dsZA5v6k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "276759922058-uol0druhn89n30d370lqqb3tonngsbbc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

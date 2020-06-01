@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.HotelsFragment">
+
+
+    <RelativeLayout
+        android:id="@+id/find_hotels_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="2dp"
+        android:focusableInTouchMode="true">
+
+        <LinearLayout
+            android:id="@+id/search_view"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/dashboard_color"
+            android:padding="5dp"
+            android:layout_marginBottom="10dp">
+
+            <androidx.appcompat.widget.SearchView
+                android:id="@+id/toolbar_hotel_search_new_activity"
+                android:background="@color/PPR_FULL_WHITE"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginRight="16dp"
+                android:inputType="text"
+                android:queryHint="Search for friends..."
+                app:iconifiedByDefault="false"
+                app:queryBackground="@android:color/transparent"
+                app:searchIcon="@drawable/search_icon"
+                app:queryHint="Search for hotels and places"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:padding="1dp"
+                android:baselineAligned="true"/>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+
+
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/container_hotel_act"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/find_hotels_toolbar">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="5dp">
+
+                        <RelativeLayout
+                            android:id="@+id/event_happenin_ll_act"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+
+                            <TextView
+                                android:id="@+id/event_happening_acc"
+                                fontPath="fonts/Lato-Regular.ttf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentStart="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_centerVertical="true"
+                                android:layout_marginLeft="10dp"
+                                android:layout_marginStart="10dp"
+                                android:text="Recommended Hotels"
+                                android:textColor="@color/colorTextBlack"
+                                android:textSize="15sp"
+                                android:textStyle="bold"
+                                tools:ignore="MissingPrefix" />
+
+                            <Button
+                                android:id="@+id/see_all_recommended_act"
+                                fontPath="fonts/Lato-Regular.ttf"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentRight="true"
+                                android:layout_alignParentEnd="true"
+                                android:background="#fafafa"
+                                android:text="See all"
+                                android:textAllCaps="false"
+                                android:textColor="@color/colorPrimary"
+                                android:textSize="15sp"
+                                tools:ignore="MissingPrefix" />
+
+                        </RelativeLayout>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/hotels_reco_act"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:animationCache="false"
+                            android:clipToPadding="false"
+                            android:layout_margin="10dp"
+                            android:scrollbars="vertical"
+                            android:scrollingCache="false"
+                            tools:listitem="@layout/hotels_for_you_layout" />
+
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </androidx.core.widget.NestedScrollView>
+
+        </RelativeLayout>
+
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</RelativeLayout>

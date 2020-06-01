@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/get_units_graph"
+    app:startDestination="@id/buyElectricityFragment">
+
+    <fragment
+        android:id="@+id/buyElectricityFragment"
+        android:name="ng.nepa.app.fragments.electricitypayment.BuyElectricityFragment"
+        android:label="BuyElectricityFragment"
+        tools:layout="@layout/fragment_buy_electricity">
+        <action
+            android:id="@+id/action_buyElectricityFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/orderSummaryFragment"
+        android:name="ng.nepa.app.fragments.electricitypayment.OrderSummaryFragment"
+        android:label="OrderSummaryFragment"
+        tools:layout="@layout/fragment_order_summary">
+        <action
+            android:id="@+id/action_orderSummaryFragment_to_buyElectricityFragment"
+            app:destination="@id/buyElectricityFragment" />
+        <action
+            android:id="@+id/action_orderSummaryFragment_to_orderConfirmedFragment"
+            app:destination="@id/orderConfirmedFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/orderConfirmedFragment"
+        android:name="ng.nepa.app.fragments.electricitypayment.OrderConfirmedFragment"
+        android:label="OrderConfirmedFragment"
+        tools:layout="@layout/fragment_order_confirmed">
+        <action
+            android:id="@+id/action_orderConfirmedFragment_to_orderSummaryFragment"
+            app:destination="@id/orderSummaryFragment" />
+    </fragment>
+</navigation>

@@ -1,0 +1,509 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context="ng.nepa.app.fragments.electricitypayment.OrderConfirmedFragment">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_barLayout_order_confirmed"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            android:elevation="7dp">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/order_confirmed_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                app:layout_collapseMode="pin"
+                app:contentInsetLeft="15dp"
+                app:contentInsetStart="15dp">
+
+            </androidx.appcompat.widget.Toolbar>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/white"
+            android:fillViewport="true"
+            android:layout_below="@+id/app_barLayout_order_confirmed">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_full_confirmed_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="20dp"
+                    app:cardElevation="5dp">
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:paddingTop="20dp"
+                        >
+
+
+                        <LinearLayout
+                            android:id="@+id/full_order_summary_view"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="40dp"
+                            android:orientation="vertical">
+
+
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:weightSum="2"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:text="Nepa.ng"
+                                    android:textSize="24sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/nepaColorBlack"
+                                    android:layout_marginBottom="10dp"
+                                    />
+
+
+                                <TextView
+                                    android:id="@+id/date"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    android:layout_marginStart="30dp"
+                                    android:text="20/20/20"
+                                    android:textSize="18sp"
+                                    android:textStyle="bold"
+                                    android:textColor="@color/nepaColorBlack"
+                                    />
+
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/amount_unit_rl"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="20dp"
+                                android:layout_marginBottom="30dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_amount_sum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    >
+
+
+                                    <TextView
+                                        android:id="@+id/confirm_phone_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Phone Number"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirm_phone"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirm_phone_txt"
+                                        android:text="081346376867"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_vendor"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_weight="1">
+
+
+                                    <TextView
+                                        android:id="@+id/confirm_vendor_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Vendor"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirm_vendor"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirm_vendor_txt"
+                                        android:text="ie"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+
+                            <LinearLayout
+                                android:id="@+id/meter_confirmed_ll"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="25dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_meter_number_confirmed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    >
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_meter_number_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Meter Number"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_meter_number"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirmed_meter_number_txt"
+                                        android:text="2122344595950"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_meter_type_sum"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1">
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_meter_type_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Meter Type"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_meter_type"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirmed_meter_type_txt"
+                                        android:text="Prepaid"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+
+                            <LinearLayout
+                                android:id="@+id/amount_unit_ll_confirmed"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="10dp"
+                                android:layout_marginBottom="30dp"
+                                android:orientation="horizontal">
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_amount_confirmed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_weight="1"
+                                    >
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_amount_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Amount"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_amount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirmed_amount_txt"
+                                        android:text="10,000"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+
+
+
+                                <RelativeLayout
+                                    android:id="@+id/rl_unit_confirmed"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="30dp"
+                                    android:layout_weight="1">
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_unit_txt"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="Unit"
+                                        android:textSize="14sp"
+                                        android:textColor="@color/nepaColorBlack"
+                                        android:layout_marginBottom="10dp"
+                                        />
+
+
+                                    <TextView
+                                        android:id="@+id/confirmed_unit"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_below="@+id/confirmed_unit_txt"
+                                        android:text="540"
+                                        android:textSize="18sp"
+                                        android:textStyle="bold"
+                                        android:textColor="@color/nepaColorBlack"
+                                        />
+
+
+                                </RelativeLayout>
+
+                            </LinearLayout>
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:paddingStart="20dp"
+                                android:paddingEnd="20dp"
+                                android:background="#1A1FA7F4"
+                                android:orientation="vertical">
+
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Token No."
+                                    android:textColor="@color/nepaColorBlack"
+                                    android:textSize="18sp" />
+
+                                <TextView
+                                    android:id="@+id/token_unit"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="N902938488446"
+                                    android:textSize="36sp"
+                                    android:textColor="@color/nepaColorBlack"
+                                    />
+
+                            </LinearLayout>
+
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginEnd="20dp"
+                                android:text="Recipt was also sent to phone number and email."
+                                android:textSize="14sp"
+                                android:textColor="@color/nepaColorBlack"
+                                />
+
+
+                            <Button
+                                android:id="@+id/confirmed_done"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="20dp"
+                                style="@style/StyleBlueBorder"
+                                android:text="Done"
+                                android:textSize="18dp"
+                                android:textAllCaps="false"
+                                />
+
+                        </LinearLayout>
+
+
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+                <LinearLayout
+                    android:id="@+id/footer_confirmed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/card_full_confirmed_view"
+                    android:paddingTop="15dp"
+                    android:background="#F9F9F9"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/subscribe_comfirmed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textColor="@color/colorPrimary"
+                        android:text="Subscribe"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="20dp"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:layout_marginBottom="25dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/ic_twitter"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_twitter"
+                            android:layout_marginEnd="20dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/ic_facebook"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_facebook"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginEnd="10dp"
+                            />
+
+                        <ImageView
+                            android:id="@+id/ic_linkden"
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:src="@drawable/ic_linkden"
+                            android:layout_marginStart="20dp"
+                            />
+
+                    </LinearLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Terms Of Service"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="Privacy Policy"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="5dp"
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="\@2020 nepa.ng"
+                        android:textSize="16sp"
+                        android:layout_marginBottom="25dp"
+                        />
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+        </androidx.core.widget.NestedScrollView>
+
+
+    </RelativeLayout>
+
+
+</layout>

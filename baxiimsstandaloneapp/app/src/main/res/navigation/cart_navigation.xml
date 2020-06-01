@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cart_navigation"
+    app:startDestination="@id/cart">
+
+    <fragment
+        android:id="@+id/cart"
+        android:name="com.capricorn.baxims.ui.cart.Cart"
+        android:label="fragment_cart"
+        tools:layout="@layout/fragment_cart" >
+        <action
+            android:id="@+id/action_cart_to_checkOut"
+            app:destination="@id/checkOut" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkOut"
+        android:name="com.capricorn.baxims.ui.cart.CheckOut"
+        android:label="fragment_check_out"
+        tools:layout="@layout/fragment_check_out" >
+        <action
+            android:id="@+id/action_checkOut_to_process_payment"
+            app:destination="@id/process_payment" />
+    </fragment>
+    <fragment
+        android:id="@+id/success"
+        android:name="com.capricorn.baxims.ui.cart.Success"
+        android:label="fragment_success"
+        tools:layout="@layout/fragment_success" />
+    <fragment
+        android:id="@+id/process_payment"
+        android:name="com.capricorn.baxims.ui.cart.ProcessPayment"
+        android:label="fragment_process_payment"
+        tools:layout="@layout/fragment_process_payment" >
+        <action
+            android:id="@+id/action_process_payment_to_success"
+            app:destination="@id/success" />
+    </fragment>
+</navigation>

@@ -1,0 +1,62 @@
+<resources>
+    <string name="app_name">Hotelsng</string>
+
+    /Bookings
+    <string name="room_list_error">No rooms found for %s</string>
+    <string name="rooms_categories">Select your Rooms</string>
+    <string name="wifi">Wifi</string>
+    <string name="light">Electricity</string>
+    <string name="bar_lounge">Bar/Lounge</string>
+    <string name="hotel_rating_wonderful">Wonderful</string>
+    <string name="overall_guest_score">Overall guest score</string>
+    <string name="check_out">Check out</string>
+    <string name="deluxe_room">Deluxe Room</string>
+    <string name="free_wifi">Free Wifi</string>
+    <string name="per_night">PER NIGHT</string>
+    <string name="dummy_price2">₦ 34,800</string>
+    <string name="select_room">SELECT ROOM(S)</string>
+    <string name="add_remove_rooms">ADD/REMOVE ROOMS</string>
+    <string name="favourites">Favourites</string>
+
+
+    <string name="terms_and_conditions">
+        TERMS AND CONDITION\n\nOn Payments\n
+        When paying via bank transfer or quickteller, please include
+        your booking id or name in the reference. If you don\'t get a
+        payment confirmation message at least 5 hours after payment,
+        please call our support line (+2347008808800) or email us at
+        reservations@hotels.ng\n\nCheck-in\n
+        Standard check-in time is 12pm - 6pm. Please inform hotels.ng
+        if you\'ll be checking in later than 5pm to ensure your
+        reservation is not cancelled by the hotel.\n\nRefunds &amp; Cancellation\n
+        Hotels are settled 24- 48 hours before your check in date.
+        Please endeavour to call or email to cancel before this time.
+        Refunds on cancellations after hotel has been paid may take 3
+        working days or longer depending on the hotel\'s policy.
+        Refunds cannot be made on any reservations made on a
+        non-refundable room rate.\n\nReservation &amp; Best Price Guarantee\n
+        Prices on the website are discounted especially for prepaid
+        reservations. Some hotels may charge a higher rate at the
+        hotel if you choose to pay on arrival. Once you place a booking
+        and your reservation is secured, we\'ll send you a final
+        confirmation on check-in date. However, the hotel reserves
+        the right to cancel your reservation.
+
+    </string>
+
+
+    <string name="default_notification_channel_id">1</string>
+    <string name="msg_token_fmt">Message Token</string>
+
+    <string name="notification_channel_id">
+        2
+    </string>
+    <string name="notification_channel_name">
+        Hotels_Channel
+    </string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>

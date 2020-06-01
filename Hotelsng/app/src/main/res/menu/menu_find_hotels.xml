@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.timbu.app.HomeActivity">
+
+    <item
+        android:id="@+id/action_call"
+        android:orderInCategory="100"
+        android:icon="@drawable/ic_call_white_24dp"
+        android:title="+2347008808800"
+        app:showAsAction="always|withText"
+        />
+
+
+
+</menu>

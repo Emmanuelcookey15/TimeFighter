@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Nepa.ng</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="agree">ok</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+
+    <string name="default_notification_channel_id">1</string>
+    <string name="msg_token_fmt">Message Token</string>
+
+    <string name="notification_channel_id">
+        2
+    </string>
+    <string name="notification_channel_name">
+        Nepa_Channel
+    </string>
+    <string name="subscription_false_status">Unsubcribe</string>
+    <string name="subscription_true_status">Subscribe</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.hotels.booking.app.fragments.LocationFragment">
+
+
+    <com.google.android.gms.maps.MapView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="20dp"
+        android:id="@+id/maps"
+        android:layout_above="@id/btn_location"
+        />
+
+    <Button
+        android:id="@+id/btn_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_btn_background"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="25dp"
+        android:text="Select Room"
+        android:textColor="@color/PPR_FULL_WHITE"
+        />
+
+</RelativeLayout>
