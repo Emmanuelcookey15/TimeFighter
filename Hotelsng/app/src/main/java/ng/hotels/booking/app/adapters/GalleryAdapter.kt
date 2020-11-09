@@ -24,7 +24,7 @@ class GalleryAdapter(var ctx: Context, var list: JSONArray?, var value: JSONObje
     }
 
     override fun onBindViewHolder(p0: GalleryHolder, p1: Int) {
-        val item = list!!.getJSONObject(p1).get("url").toString()
+        val item = list!!.getJSONObject(p1).get("url").toString() + "?w=360"
 
 //        p0.amenitiesImage.setImageResource(values[p1])
 

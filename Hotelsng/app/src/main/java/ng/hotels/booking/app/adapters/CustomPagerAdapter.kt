@@ -2,6 +2,7 @@ package ng.hotels.booking.app.adapters
 
 
 import android.content.Context
+import android.graphics.PointF
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,11 @@ import android.widget.LinearLayout
 import androidx.swiperefreshlayout.widget.CircularProgressDrawable
 import androidx.viewpager.widget.PagerAdapter
 import com.bumptech.glide.Glide
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.resource.bitmap.CenterCrop
+import jp.wasabeef.glide.transformations.BlurTransformation
+import jp.wasabeef.glide.transformations.gpu.ContrastFilterTransformation
+import jp.wasabeef.glide.transformations.gpu.VignetteFilterTransformation
 import ng.hotels.booking.app.R
 import org.json.JSONArray
 
@@ -37,9 +43,11 @@ class CustomPagerAdapter(var ctx: Context, var mResources: JSONArray, var imageN
 
         if (imageNumber > 0) {
             Glide.with(ctx)
-                    .load(mResources.getJSONObject(position).get("url"))
-                    .placeholder(R.drawable.default_bed)
-                    .into(imageView)
+                .load(mResources.getJSONObject(position).get("url"))
+                .override(500, 500)
+                .diskCacheStrategy(DiskCacheStrategy.DATA)
+                .placeholder(imageView.drawable)
+                .into(imageView)
         }else{
             imageView.setImageResource(R.drawable.top)
         }

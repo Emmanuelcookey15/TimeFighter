@@ -1,15 +1,40 @@
 <resources>
     <string name="app_name">Food Plug</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
 
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
+    <string name="web_client_id">313333384763-q761fvk8frpp0duvlmo1gh40c3589696.apps.googleusercontent.com</string>
 
-    <string name="home_second">Home Second</string>
+    <string name="food_plug">Food Plug</string>
+    <string name="welcome">Welcome</string>
+    <string name="register">Register</string>
+    <string name="login">Login</string>
+
+
+    <string name="navigation_drawer_open">Drawer Open</string>
+    <string name="navigation_drawer_close">Drawer Closed</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="or">or</string>
+    <string name="register_with_google">Register with Google</string>
+    <string name="password">Password</string>
+    <string name="full_name">Full Name</string>
+    <string name="email">Email</string>
+    <string name="privacy_policy">By sign up I accept the terms of use and</string>
+    <string name="privacy_policy_contd">the data privacy policy</string>
+    <string name="login_here">Login here</string>
+    <string name="sign_in_with_your_google_account">Sign in with your google account</string>
+    <string name="email_or_phone_number">Email or phone number</string>
+    <string name="already_have_an_account">Already have an account</string>
+    <string name="next">Next</string>
+    <string name="to_continue_google_will_share">To continue, Google will share your</string>
+    <string name="name_email_address_language">name, email address, language</string>
+    <string name="preference_and_profile_picture_with_food_plug">preference and profile picture with Food Plug</string>
+    <string name="login_with_google">Login with Google</string>
+    <string name="retrieve_here">Retrieve Here</string>
+    <string name="register_here">Register Here</string>
+    <string name="forgot_your_password">Forgot your password</string>
+    <string name="no_account_yet">No account yet?</string>
+    <string name="lagos">Lagos</string>
+    <string name="dummy_phone_num">+2349087675076</string>
+    <string name="today_s_menu">Today\'s Menu</string>
 </resources>

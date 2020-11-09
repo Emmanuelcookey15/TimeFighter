@@ -12,6 +12,8 @@ import android.text.TextUtils.replace
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
+import android.view.ViewGroup
+import android.widget.Button
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
@@ -77,12 +79,14 @@ class MainActivity : AppCompatActivity() {
         bottom_nav.setOnNavigationItemSelectedListener(BottomNavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.hotels_item -> {
+                    supportActionBar?.show()
                     supportActionBar?.title = "Hotels"
                     changeFragmentViews(HotelsFragment())
                     return@OnNavigationItemSelectedListener true
                 }
 
                 R.id.bookings_item -> {
+                    supportActionBar?.show()
                     supportActionBar?.title = "Bookings"
                     changeFragmentViews(BookingHistoryFragment())
                     return@OnNavigationItemSelectedListener true
@@ -90,18 +94,22 @@ class MainActivity : AppCompatActivity() {
 
 
                 R.id.fav_item -> {
+                    supportActionBar?.show()
                     supportActionBar?.title = "Favourites"
                     changeFragmentViews(FavouritesFragment())
                     return@OnNavigationItemSelectedListener true
                 }
 
-                R.id.support_item -> {
-                    TelexManager(this)
-                        .setDevelopersEmail("emmanuelcookey744@gmail.com")
-                        .setFrameLayout(R.id.fragment_container)
-                        .initializeAsFragment()
-                }
-
+//                R.id.support_item -> {
+//                    TelexManager(this)
+//                        .setOrganization("mark-essien-inc-b-447199")
+//                        .setTechnicalTeam("management-team")
+//                        .setGeneralTeam("hotels.ng-customer-support")
+//                        .setSalesTeam("corporate-sales")
+//                        .setFrameLayout(R.id.fragment_container)
+//                        .initializeAsFragment()
+//                    return@OnNavigationItemSelectedListener true
+//                }
 
             }
             false

@@ -16,6 +16,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".activities.HistoryView"></activity>
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,41 +24,36 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".activities.YourBookingsActivity"/>
-        <activity android:name=".activities.SecureBookingActivity"/>
+        <activity android:name=".activities.YourBookingsActivity" />
+        <activity android:name=".activities.SecureBookingActivity" />
         <activity android:name=".activities.HotelsListingActivity" />
         <activity android:name=".activities.HotelBookingActivity" />
         <activity android:name=".fragments.BookingHistoryFragment" />
         <activity android:name=".fragments.FavouritesFragment" />
 
-        <receiver android:name=".fragments.HotelsFragment$ReceiverHotelUpdate"/>
+        <receiver android:name=".fragments.HotelsFragment$ReceiverHotelUpdate" />
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyB-tMN_iRt9jGuGbeZR48F5AhajoDQ-VKI" />
 
+
         <service
-            android:name="ng.hotels.booking.app.services.HotelsFirebaseMessagingService"
+            android:name=".services.HotelsFirebaseMessagingService"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.google.firebase.MESSAGING_EVENT" />
             </intent-filter>
-        </service>
-
-        <!-- Default Notification Icon -->
+        </service> <!-- Default Notification Icon -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_icon"
-            android:resource="@mipmap/ic_launcher" />
-        <!-- Default notification color -->
+            android:resource="@mipmap/ic_launcher" /> <!-- Default notification color -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_color"
-            android:resource="@color/colorAccent" />
-        <!-- Default notification channel (required for Android 8.0 and above) -->
+            android:resource="@color/colorAccent" /> <!-- Default notification channel (required for Android 8.0 and above) -->
         <meta-data
             android:name="com.google.firebase.messaging.default_notification_channel_id"
             android:value="@string/default_notification_channel_id" />
-
     </application>
 
 </manifest>

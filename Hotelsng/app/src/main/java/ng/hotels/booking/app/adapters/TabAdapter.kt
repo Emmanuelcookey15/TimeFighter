@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 
+
 class TabAdapter(val fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     var mFragmentList = ArrayList<Fragment>()
@@ -22,7 +23,6 @@ class TabAdapter(val fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
     override fun getPageTitle(position: Int): CharSequence? {
         return mFragmentTitleList[position];
     }
-
 
     fun addFragment(fragment: Fragment, title: String) {
         mFragmentList.add(fragment)

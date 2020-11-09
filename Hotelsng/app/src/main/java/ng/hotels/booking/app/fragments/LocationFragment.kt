@@ -38,7 +38,6 @@ class LocationFragment : Fragment(), OnMapReadyCallback, FragmentLifecycle {
        g = MapsInitializer.initialize(activity!!)
     }
 
-
     override fun onMapReady(p0: GoogleMap?) {
 
         g
@@ -89,10 +88,12 @@ class LocationFragment : Fragment(), OnMapReadyCallback, FragmentLifecycle {
 
         var selectRoom = v.findViewById<Button>(R.id.btn_location)
 
+        activity!!.btn_select_bookings.visibility = View.VISIBLE
 
         selectRoom.setOnClickListener {
 
             activity!!.viewPager.setCurrentItem( 1, true)
+
         }
         return v
     }

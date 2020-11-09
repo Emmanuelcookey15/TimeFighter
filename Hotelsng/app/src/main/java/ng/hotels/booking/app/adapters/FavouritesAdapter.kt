@@ -1,29 +1,31 @@
 package ng.hotels.booking.app.adapters
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.RelativeLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.JsonArray
 import com.google.gson.JsonParser
 import ng.hotels.booking.app.R
 import ng.hotels.booking.app.activities.HotelBookingActivity
+import ng.hotels.booking.app.utils.TinyDB
+import org.json.JSONObject
 import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class FavouritesAdapter(hotelSearchList: ArrayList<String>, var ctx: Context): RecyclerView.Adapter<FavouritesAdapter.FavouritesHolder>() {
+class FavouritesAdapter(var ctx: Context): RecyclerView.Adapter<FavouritesAdapter.FavouritesHolder>() {
 
 
-    var listed = hotelSearchList
+    var listed = ArrayList<String>()
+
+    var tinydb = TinyDB(ctx)
 
     override fun onCreateViewHolder(p0: ViewGroup, p1: Int): FavouritesHolder {
         return FavouritesHolder(LayoutInflater.from(p0.context).inflate(R.layout.fav_list_item, p0, false))
@@ -34,13 +36,21 @@ class FavouritesAdapter(hotelSearchList: ArrayList<String>, var ctx: Context): R
         return listed.size
     }
 
+
+    fun setData(hotelSearchList: ArrayList<String>){
+        this.listed = hotelSearchList
+        notifyDataSetChanged()
+    }
+
     override fun onBindViewHolder(p0: FavouritesHolder, p1: Int) {
 
-        val item = JsonParser().parse(listed[p1]).asJsonObject
+        val item = JsonParser.parseString(listed[p1]).asJsonObject
 
         val price = priceWithoutDecimal(item.get("min_rate_ngn").asDouble)
 
-        p0.hotelName.text = item.get("property_name").asString
+        val propertyName = item.get("property_name").asString
+
+        p0.hotelName.text = propertyName
 
         if((item.get("min_rate_ngn").asDouble) > 100.0){
             p0.hotelPrice.text = "₦$price"
@@ -90,12 +100,15 @@ class FavouritesAdapter(hotelSearchList: ArrayList<String>, var ctx: Context): R
         }
 
 
+        p0.favouriteHotels.setOnClickListener {
+
+        }
     }
 
     private fun priceWithoutDecimal(number: Double): String {
         val number3digits:Double = Math.round(number * 1000.0) / 1000.0
         val number2digits:Double = Math.round(number3digits * 100.0) / 100.0
-        val solution:Double = Math.round(number2digits * 10.0) / 10.0
+        val solution: Double = Math.round(number2digits * 10.0) / 10.0
         val solu = NumberFormat.getNumberInstance(Locale.US).format(solution)
         val result = solu.toString()
         return result

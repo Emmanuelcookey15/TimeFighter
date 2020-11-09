@@ -42,6 +42,7 @@ class GalleryFragment : Fragment(), FragmentLifecycle {
 
         val selectRoom = view.findViewById<Button>(R.id.btn_gallery)
 
+        activity!!.btn_select_bookings.visibility = View.VISIBLE
 
         myDialog =  Dialog(activity!!)
 
@@ -53,6 +54,7 @@ class GalleryFragment : Fragment(), FragmentLifecycle {
 
         selectRoom.setOnClickListener {
             activity!!.viewPager.setCurrentItem( 1, true)
+
         }
 
         return view

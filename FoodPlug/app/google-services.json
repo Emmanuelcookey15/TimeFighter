@@ -8,6 +8,35 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:313333384763:android:d501cad248ad585c487e1e",
+        "android_client_info": {
+          "package_name": "com.cookey.sandra.foodplug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313333384763-q761fvk8frpp0duvlmo1gh40c3589696.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDui7wdlsIliKkkSSscdPjHRYiuZdkM2vM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "313333384763-q761fvk8frpp0duvlmo1gh40c3589696.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:313333384763:android:1a8c1165ba40bf48487e1e",
         "android_client_info": {
           "package_name": "com.example.foodplug"

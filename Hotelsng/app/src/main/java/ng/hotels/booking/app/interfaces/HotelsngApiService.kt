@@ -10,7 +10,6 @@ import java.util.*
 
 interface HotelsngApiService {
 
-
     //Hotels Search
     @GET("oauth/authenticate")
     fun getToken(@Query("grant_type") grantType: String, @Query("client_id") clientID: String,

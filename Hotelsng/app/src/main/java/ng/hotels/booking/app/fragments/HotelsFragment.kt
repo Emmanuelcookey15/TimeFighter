@@ -179,6 +179,7 @@ class HotelsFragment : Fragment() {
 
                 tinyDB.putInt(TinyDB.PAGENUMBER, 1)
                 val listingIntent = Intent(activity, HotelsListingActivity::class.java)
+                tinyDB.putString(TinyDB.SPINNERVALUE, "Top picks")
                 listingIntent.putExtra("SearchedResult", "search")
                 listingIntent.putExtra("inputedItem", query)
                 startActivity(listingIntent)
@@ -201,8 +202,7 @@ class HotelsFragment : Fragment() {
 
             if (tinyDB.getString(TinyDB.HOTELS_DATA) != "") {
                 tinyDB.getString(TinyDB.HOTELS_DATA)
-                val jsonParser = JsonParser()
-                val gsonObject = jsonParser.parse(tinyDB.getString(TinyDB.HOTELS_DATA)).asJsonObject
+                val gsonObject = JsonParser.parseString(tinyDB.getString(TinyDB.HOTELS_DATA)).asJsonObject
                 adapterH = AllHotelsAdapter(gsonObject.get("data").asJsonArray, activity!!)
                 rv.adapter = adapterH
             }else{
@@ -216,8 +216,7 @@ class HotelsFragment : Fragment() {
             if (tinyDB.getString(TinyDB.HOTELS_DATA) != "" ){
                 rv.visibility = View.VISIBLE
                 tinyDB.getString(TinyDB.HOTELS_DATA)
-                val jsonParser = JsonParser()
-                val gsonObject = jsonParser.parse(tinyDB.getString(TinyDB.HOTELS_DATA)).asJsonObject
+                val gsonObject = JsonParser.parseString(tinyDB.getString(TinyDB.HOTELS_DATA)).asJsonObject
                 adapterH = AllHotelsAdapter(gsonObject.get("data").asJsonArray, activity!!)
                 adapterH.notifyDataSetChanged()
                 rv.adapter = adapterH

@@ -1,6 +1,8 @@
 package ng.hotels.booking.app.adapters
 
+import android.app.Activity
 import android.content.Context
+import android.content.Intent
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +10,11 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import ng.hotels.booking.app.R
+import ng.hotels.booking.app.activities.HistoryView
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.NumberFormat
@@ -29,6 +33,7 @@ class BookingHistoryAdapter(var bookingList: ArrayList<String>, var ctx: Context
         var hotelImage = itemView.findViewById<ImageView>(R.id.booking_history_default_image)
         var hotelRating = itemView.findViewById<Button>(R.id.booking_history_hotel_rating)
         var hotelExcellence = itemView.findViewById<TextView>(R.id.booking_history_hotel_excellence)
+        var fullView = itemView.findViewById<CardView>(R.id.full_his_view)
 
     }
 
@@ -83,6 +88,13 @@ class BookingHistoryAdapter(var bookingList: ArrayList<String>, var ctx: Context
                     .into(p0.hotelImage)
         }else{
             p0.hotelImage.setImageResource(R.drawable.top)
+        }
+
+        p0.fullView.setOnClickListener {
+            val historyIntent = Intent(ctx, HistoryView::class.java)
+            historyIntent.putExtra("history", item.toString())
+            ctx.startActivity(historyIntent)
+            (ctx as Activity).overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)
         }
 
     }

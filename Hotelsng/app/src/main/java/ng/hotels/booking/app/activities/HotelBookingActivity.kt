@@ -1,11 +1,14 @@
 package ng.hotels.booking.app.activities
 
+import android.content.DialogInterface
 import android.os.AsyncTask
 import android.os.Build
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewpager.widget.ViewPager
 import com.google.android.material.tabs.TabLayout
@@ -19,6 +22,7 @@ import ng.hotels.booking.app.interfaces.FragmentLifecycle
 import ng.hotels.booking.app.interfaces.HotelsngApiService
 import ng.hotels.booking.app.utils.PreferenceUtils
 import ng.hotels.booking.app.utils.TinyDB
+import ng.hotels.booking.app.utils.favouritehotelCheck
 import org.json.JSONObject
 import retrofit2.Call
 import retrofit2.Callback
@@ -34,6 +38,7 @@ class HotelBookingActivity : AppCompatActivity() {
     lateinit var tinyDB: TinyDB
 
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_hotel_booking)
@@ -76,30 +81,29 @@ class HotelBookingActivity : AppCompatActivity() {
         supportActionBar?.setHomeButtonEnabled(true)
         supportActionBar?.setDisplayShowHomeEnabled(true)
 
+        val alreadyAdded = favouritehotelCheck(propertyName, "property_name", tinyDB)
+
+        if (alreadyAdded){
+            single_page_fav_icon.setImageDrawable(resources.getDrawable(R.drawable.fav_select, applicationContext.theme))
+        }
+
         single_page_fav_icon.setOnClickListener {
 
-
-            var alreadyAdded = false
             if (tinyDB.getListString(TinyDB.FAVOURITES).size > 0){
-                for (value in tinyDB.getListString(TinyDB.FAVOURITES)){
-                    val jsonFormat = JSONObject(value)
-                    val name = jsonFormat.getString("property_name")
-                    if (name == propertyName){
-                        alreadyAdded = true
-                    }
-                }
 
-                if (alreadyAdded == false){
+                if (!alreadyAdded){
                     Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
                     val bookingHistory = tinyDB.getListString(TinyDB.FAVOURITES)
+                    single_page_fav_icon.setImageDrawable(resources.getDrawable(R.drawable.fav_select, applicationContext.theme))
                     bookingHistory.add(jsonString)
                     tinyDB.putListString(TinyDB.FAVOURITES, bookingHistory)
                 }else{
-                    Toast.makeText(this, "Already added to Favourites", Toast.LENGTH_SHORT).show()
+                    removeFromFavourite(propertyName)
                 }
             }else{
                 Toast.makeText(this, "added", Toast.LENGTH_SHORT).show()
                 val bookingHistory = tinyDB.getListString(TinyDB.FAVOURITES)
+                single_page_fav_icon.setImageDrawable(resources.getDrawable(R.drawable.fav_select, applicationContext.theme))
                 bookingHistory.add(jsonString)
                 tinyDB.putListString(TinyDB.FAVOURITES, bookingHistory)
             }
@@ -140,8 +144,6 @@ class HotelBookingActivity : AppCompatActivity() {
         viewPager.adapter = adapterTabing
         tabLayout.setupWithViewPager(viewPager)
 
-
-
         viewPager.addOnPageChangeListener( object : ViewPager.OnPageChangeListener{
             override fun onPageScrollStateChanged(p0: Int) {
 
@@ -163,9 +165,26 @@ class HotelBookingActivity : AppCompatActivity() {
 
                 currentPosition = p0
 
+                if (currentPosition == 0 || currentPosition == 2 || currentPosition == 3){
+                    btn_select_bookings.visibility = View.VISIBLE
+                }else{
+                    btn_select_bookings.visibility = View.GONE
+                }
+
             }
 
         })
+
+
+
+
+
+        btn_select_bookings.setOnClickListener {
+
+            viewPager.setCurrentItem( 1, true)
+            btn_select_bookings.visibility = View.GONE
+
+        }
 
 
 
@@ -180,6 +199,34 @@ class HotelBookingActivity : AppCompatActivity() {
 
     }
 
+
+
+    fun removeFromFavourite(propertyName: String){
+        val alertDialogBuilder = AlertDialog.Builder(this)
+        alertDialogBuilder.setMessage("Are you sure, You want to remove from Favourite?")
+        alertDialogBuilder.setPositiveButton("yes", DialogInterface.OnClickListener { dialogInterface, i ->
+            if (tinyDB.getListString(TinyDB.FAVOURITES).size > 0) {
+                for (value in tinyDB.getListString(TinyDB.FAVOURITES)) {
+                    val jsonFormat = JSONObject(value)
+                    val name = jsonFormat.getString("property_name")
+                    if (name == propertyName) {
+                        Toast.makeText(this, "Done!!!", Toast.LENGTH_SHORT).show()
+                        val listFav = tinyDB.getListString(TinyDB.FAVOURITES)
+                        listFav.remove(value)
+                        tinyDB.putListString(TinyDB.FAVOURITES, listFav)
+
+                    }
+                }
+            }
+        })
+
+        alertDialogBuilder.setNegativeButton("No",DialogInterface.OnClickListener() {dialogInterface, i ->
+            alertDialogBuilder.create().dismiss()
+        });
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.show();
+    }
 
     private fun priceWithoutDecimal(number: Double): String {
         val number3digits:Double = Math.round(number * 1000.0) / 1000.0

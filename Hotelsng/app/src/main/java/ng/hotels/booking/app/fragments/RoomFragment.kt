@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.google.gson.JsonArray
 import com.google.gson.JsonObject
+import kotlinx.android.synthetic.main.activity_hotel_booking.*
 import ng.hotels.booking.app.R
 import ng.hotels.booking.app.activities.SecureBookingActivity
 import ng.hotels.booking.app.adapters.RoomsAdapter
@@ -105,6 +106,7 @@ class RoomFragment : Fragment(), FragmentLifecycle {
         val btnCheckOut = view.findViewById<Button>(R.id.btn_final_check_out)
 
         totalPrice.text = tinyDB.getInt(TinyDB.ROOMPRICE).toString()
+
 
         btnCheckOut.setOnClickListener {
 

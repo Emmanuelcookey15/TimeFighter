@@ -58,8 +58,6 @@ class ProductCategoryAdapter(val productCategoryList: ArrayList<String>, var pro
                 holder.fullProductView.get(pos).isSelected = true
             }
         }
-
-
     }
 
     interface OnItemClickListener {

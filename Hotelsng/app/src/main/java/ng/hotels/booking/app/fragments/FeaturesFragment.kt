@@ -2,11 +2,13 @@ package ng.hotels.booking.app.fragments
 
 
 import android.os.Bundle
+import android.text.Html
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.RelativeLayout
+import androidx.core.text.HtmlCompat
 import androidx.fragment.app.Fragment
 import com.ms.square.android.expandabletextview.ExpandableTextView
 import kotlinx.android.synthetic.main.activity_hotel_booking.*
@@ -64,9 +66,12 @@ class FeaturesFragment : Fragment(), FragmentLifecycle {
 
         val description = v.findViewById<ExpandableTextView>(R.id.single_page_description)
 
+        activity!!.btn_select_bookings.visibility = View.VISIBLE
+
         selectRoom.setOnClickListener {
 
             activity!!.viewPager.setCurrentItem( 1, true)
+
         }
 
 
@@ -76,12 +81,12 @@ class FeaturesFragment : Fragment(), FragmentLifecycle {
 
         val jObj = JSONObject(jsonString)
 
-        description.text = removeHTMLTagsTest(jObj.get("description").toString())
+        description.text = HtmlCompat.fromHtml(jObj.get("description").toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
 
         if (jObj.get("description").toString().isEmpty())
             description.text = ("No description for " + jObj.get("property_name").toString()).toString()
         else
-            description.text = removeHTMLTagsTest(jObj.get("description").toString())
+            description.text = HtmlCompat.fromHtml(jObj.get("description").toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
 
         val facility = jObj.get("facility_type_names").toString()
 

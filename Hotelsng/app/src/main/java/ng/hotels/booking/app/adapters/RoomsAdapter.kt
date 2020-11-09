@@ -18,7 +18,7 @@ import java.text.NumberFormat
 import java.util.*
 import kotlin.collections.ArrayList
 
-class RoomsAdapter(val ctx: Context?,
+class RoomsAdapter(   val ctx: Context?,
                     roomslist: JsonArray?, var txt: TextView): RecyclerView.Adapter<RoomsAdapter.RoomHolder>(){
 
     var list = roomslist

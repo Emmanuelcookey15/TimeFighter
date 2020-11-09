@@ -66,17 +66,6 @@ class YourBookingsActivity : AppCompatActivity() {
 
         val bookingsList = JSONObject()
 
-        bookingsList.put("hotel_name", hotel_name)
-        bookingsList.put("hotel_address",address_hotel)
-        bookingsList.put("hotel_ratings",rating)
-        bookingsList.put("hotel_images", images_room)
-        bookingsList.put("hotel_images_number",images_room_num)
-
-        val bookingHistory = tinyDB.getListString(TinyDB.BookingsHistory)
-
-        bookingHistory.add(bookingsList.toString())
-
-        tinyDB.putListString(TinyDB.BookingsHistory, bookingHistory)
 
         your_bookings_hotel_name.text = hotel_name
 
@@ -108,6 +97,27 @@ class YourBookingsActivity : AppCompatActivity() {
         val roomsBooked =  jsonBooking.getJSONObject("data").getJSONArray("rooms")
 
         val numofRooms = roomsBooked.length()
+
+        bookingsList.put("booking_id", bookingID)
+        bookingsList.put("hotel_name", hotel_name)
+        bookingsList.put("hotel_address",address_hotel)
+        bookingsList.put("hotel_ratings",rating)
+        bookingsList.put("hotel_images", images_room)
+        bookingsList.put("hotel_images_number",images_room_num)
+        bookingsList.put("check_in", checkIn)
+        bookingsList.put("check_out", checkOut)
+        bookingsList.put("price", totalPrice)
+        bookingsList.put("user_name", "$firstName $lastName")
+        bookingsList.put("email", email)
+        bookingsList.put("phone", phone)
+        bookingsList.put("num_of_rooms", numofRooms)
+        bookingsList.put("duration", diff)
+
+        val bookingHistory = tinyDB.getListString(TinyDB.BookingsHistory)
+
+        bookingHistory.add(bookingsList.toString())
+
+        tinyDB.putListString(TinyDB.BookingsHistory, bookingHistory)
 
 
         if (rateAsDouble == 0.0){
@@ -141,7 +151,7 @@ class YourBookingsActivity : AppCompatActivity() {
 
         your_booking_check_out.text = checkOut
 
-        bookings_id.text = "Booking ID " + bookingID
+        bookings_id.text = "Booking ID $bookingID"
 
         your_room_and_night_details.text =   "$numofRooms room and $diff night"
 

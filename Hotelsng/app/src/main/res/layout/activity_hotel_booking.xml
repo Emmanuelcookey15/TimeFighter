@@ -237,4 +237,20 @@
 
     </androidx.core.widget.NestedScrollView>
 
+
+    <Button
+        android:id="@+id/btn_select_bookings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/blue_btn_background"
+        android:layout_gravity="bottom"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="20dp"
+        android:text="@string/select_room"
+        android:textColor="@color/PPR_FULL_WHITE"
+        />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

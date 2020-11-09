@@ -10,6 +10,7 @@ import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.tabs.TabLayout
 import ng.hotels.booking.app.R
+import org.json.JSONObject
 
 /**
  * Created by Emem on 7/4/18.
@@ -34,3 +35,17 @@ fun Activity.showAppSnackbar(mainTextStringId: String, showTime:Int = Snackbar.L
             .setAction(actionString, listener).show()
 
 }
+
+fun favouritehotelCheck(propertyName: String, propertyNameKey: String, tinydb: TinyDB): Boolean{
+
+    var alreadyAdded = false
+    for (value in tinydb.getListString(TinyDB.FAVOURITES)){
+        val jsonFormat = JSONObject(value)
+        val name = jsonFormat.getString(propertyNameKey)
+        if (name == propertyName){
+            alreadyAdded = true
+        }
+    }
+    return alreadyAdded
+}
+

@@ -12,10 +12,7 @@ import android.text.TextUtils
 import android.util.Log
 import android.view.MenuItem
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.DatePicker
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.JsonObject
 import com.flutterwave.raveandroid.RaveConstants
@@ -318,10 +315,14 @@ class SecureBookingActivity : AppCompatActivity() {
                     theBooking.checkout = df.format(changedDateTwo)
                     theBooking.ptype = "hotel"
                     theBooking.property = propertyId
-                    theBooking.additional_info = ""
+                    if (booking_additional_comment.text.toString().isEmpty()) {
+                        theBooking.additional_info = ""
+                    }else{
+                        theBooking.additional_info = booking_additional_comment.text.toString()
+                    }
                     theBooking.payment_type = "post-payment"
                     theBooking.agent = ""
-                    theBooking.provider = "TimbuApp"
+                    theBooking.provider = "HNG App"
                     theBooking.rooms = they
 
                     if (booking_reservation_by_who_check.isChecked){
@@ -333,6 +334,7 @@ class SecureBookingActivity : AppCompatActivity() {
 
                     }
 
+                    btn_pay_at_hotel.loadState(0, "Please Wait...")
                     BookRoom().execute()
 
                     bookingsIntent = Intent(this, YourBookingsActivity::class.java)
@@ -480,6 +482,7 @@ class SecureBookingActivity : AppCompatActivity() {
         call.enqueue(object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 Log.d("bookingData", t.message)
+                btn_pay_at_hotel.loadState(1, "Pay at hotel")
                 Toast.makeText(this@SecureBookingActivity,
                         "Your bookings failed. Please check your network connection or try again later.", Toast.LENGTH_LONG).show()
             }
@@ -489,6 +492,7 @@ class SecureBookingActivity : AppCompatActivity() {
                 if (!response.isSuccessful){
                     Log.d("bookingData", response.message() + " : " + response.code().toString())
                     tinyDB.putBoolean(TinyDB.BookingSuccess, false)
+                    btn_pay_at_hotel.loadState(1, "Pay at hotel")
                     Toast.makeText(this@SecureBookingActivity,
                             "Your booking failed. Please check your network connection or try again later.", Toast.LENGTH_LONG).show()
                 }
@@ -498,6 +502,7 @@ class SecureBookingActivity : AppCompatActivity() {
                 if (response.isSuccessful) {
                     Log.d("bookingData", response.body().toString())
 
+                    btn_pay_at_hotel.loadState(1, "Pay at hotel")
                     tinyDB.putString(TinyDB.BookingResponse, response.body().toString())
                     tinyDB.putBoolean(TinyDB.BookingSuccess, true)
                     val bundle = Bundle()
@@ -557,10 +562,14 @@ class SecureBookingActivity : AppCompatActivity() {
                     theBooking.checkout = df.format(changedDateTwo)
                     theBooking.ptype = "hotel"
                     theBooking.property = propertyId
-                    theBooking.additional_info = ""
+                    if (booking_additional_comment.text.toString().isEmpty()) {
+                        theBooking.additional_info = ""
+                    }else{
+                        theBooking.additional_info = booking_additional_comment.text.toString()
+                    }
                     theBooking.payment_type = "pre-payment"
                     theBooking.agent = ""
-                    theBooking.provider = "TimbuApp"
+                    theBooking.provider = "hotelsng"
                     theBooking.rooms = they
 
                     if (booking_reservation_by_who_check.isChecked){
@@ -608,6 +617,25 @@ class SecureBookingActivity : AppCompatActivity() {
 
         }
 
+    }
+
+
+    private fun Button.loadState(state:Int, message: String){
+        this.apply {
+            when(state){
+                0->{
+                    alpha=0.6f
+                    text=message
+                    isClickable=false
+                }
+                1->{
+                    alpha=1.0f
+                    text=message
+                    isClickable=true
+                }
+            }
+
+        }
     }
 
 }

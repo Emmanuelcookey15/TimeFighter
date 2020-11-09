@@ -108,7 +108,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="20dp"
                     android:paddingBottom="5dp"
-                    android:text="Select Room"
+                    android:text="Scroll Up To Select Room"
                     android:textColor="#084482"
                     android:textStyle="bold"
                     />

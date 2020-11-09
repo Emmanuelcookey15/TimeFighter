@@ -3,16 +3,19 @@ package ng.hotels.booking.app.adapters
 import android.content.Context
 import android.content.Intent
 import android.graphics.Color
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.google.gson.JsonArray
 import ng.hotels.booking.app.R
 import ng.hotels.booking.app.activities.HotelBookingActivity
 import ng.hotels.booking.app.utils.TinyDB
+import ng.hotels.booking.app.utils.favouritehotelCheck
 import org.json.JSONArray
 import org.json.JSONObject
 import java.text.NumberFormat
@@ -33,6 +36,7 @@ class SearchHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): Recycl
         return list!!.size()
     }
 
+    @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onBindViewHolder(p0: SearchHotelsHolder, p1: Int) {
         val item = list!!.get(p1).asJsonObject
 
@@ -87,23 +91,20 @@ class SearchHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): Recycl
             ctx.startActivity(i)
         }
 
+        val alreadyAdded = favouritehotelCheck(propertyName, "property_name", tinydb)
+
+        if (alreadyAdded){
+            p0.favouriteHotels.setImageDrawable(ctx.resources.getDrawable(R.drawable.fav_select, ctx.applicationContext.theme))
+        }
 
 
         p0.favouriteHotels.setOnClickListener {
 
-
-            var alreadyAdded = false
             if (tinydb.getListString(TinyDB.FAVOURITES).size > 0){
-                for (value in tinydb.getListString(TinyDB.FAVOURITES)){
-                    val jsonFormat = JSONObject(value)
-                    val name = jsonFormat.getString("property_name")
-                    if (name == propertyName){
-                        alreadyAdded = true
-                    }
-                }
 
-                if (alreadyAdded == false){
+                if (!alreadyAdded){
                     val bookingHistory = tinydb.getListString(TinyDB.FAVOURITES)
+                    p0.favouriteHotels.setImageDrawable(ctx.resources.getDrawable(R.drawable.fav_select, ctx.applicationContext.theme))
                     bookingHistory.add(item.toString())
                     tinydb.putListString(TinyDB.FAVOURITES, bookingHistory)
                     Toast.makeText(ctx, "added", Toast.LENGTH_SHORT).show()
@@ -112,6 +113,7 @@ class SearchHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): Recycl
                 }
             }else{
                 val bookingHistory = tinydb.getListString(TinyDB.FAVOURITES)
+                p0.favouriteHotels.setImageDrawable(ctx.resources.getDrawable(R.drawable.fav_select, ctx.applicationContext.theme))
                 bookingHistory.add(item.toString())
                 tinydb.putListString(TinyDB.FAVOURITES, bookingHistory)
                 Toast.makeText(ctx, "added", Toast.LENGTH_SHORT).show()

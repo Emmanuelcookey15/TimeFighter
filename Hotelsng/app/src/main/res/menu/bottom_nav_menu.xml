@@ -17,10 +17,10 @@
         android:icon="@drawable/ic_favorite_black_24dp"
         android:title="Favourite"/>
 
-    <item
-        android:id="@+id/support_item"
-        android:icon="@drawable/ic_help_black_24dp"
-        android:title="Support"/>
+<!--    <item-->
+<!--        android:id="@+id/support_item"-->
+<!--        android:icon="@drawable/ic_help_black_24dp"-->
+<!--        android:title="Support"/>-->
 
 
 </menu>

@@ -188,6 +188,7 @@ class OrderSummaryFragment : Fragment() {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 Log.d("CONFIRM", "Failed")
             }
+            
 
             override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
 

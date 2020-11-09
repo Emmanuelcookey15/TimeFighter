@@ -32,10 +32,12 @@ class AllHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): RecyclerV
 
     fun setHotelList(hotelsList: JsonArray) {
         list = hotelsList
+
         notifyDataSetChanged()
     }
 
     override fun onBindViewHolder(p0: AllHotelsHolder, p1: Int) {
+
         val item = list!!.get(p1).asJsonObject
 
         val price = priceWithoutDecimal(item.get("min_rate_ngn").asDouble)
@@ -75,9 +77,10 @@ class AllHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): RecyclerV
         if (item.get("num_of_images").asInt > 0){
 
                 Glide.with(p0.hotelImage.context)
-                        .load(arrayOfHotelsImages.get(0).asJsonObject.get("url").asString)
-                        .placeholder(R.drawable.top)
-                        .into(p0.hotelImage)
+                    .load(arrayOfHotelsImages.get(0).asJsonObject.get("url").asString)
+                    .centerCrop()
+                    .placeholder(R.drawable.top)
+                    .into(p0.hotelImage)
                 tinyDB.putInt(TinyDB.ARRAYOFHOTELSIMAGES, (item.get("images").asJsonArray).size())
 
         }else{
@@ -111,7 +114,6 @@ class AllHotelsAdapter(hotelSearchList: JsonArray?, var ctx: Context): RecyclerV
         var hotelReview = itemView.findViewById<TextView>(R.id.reviews)
         var hotelExcellence = itemView.findViewById<TextView>(R.id.hotel_excellence)
         var wholeView = itemView.findViewById<RelativeLayout>(R.id.the_hotel_view)
-
 
 
     }

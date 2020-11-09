@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">Hotelsng</string>
+    <string name="app_name">Hotels.ng</string>
 
-    /Bookings
+    <!-- Bookings -->
     <string name="room_list_error">No rooms found for %s</string>
     <string name="rooms_categories">Select your Rooms</string>
     <string name="wifi">Wifi</string>

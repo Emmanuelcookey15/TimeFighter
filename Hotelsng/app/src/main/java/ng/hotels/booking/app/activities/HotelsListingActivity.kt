@@ -69,7 +69,7 @@ class HotelsListingActivity : AppCompatActivity() {
         categories.add("Cheap Hotels")
         categories.add("Expensive Hotel")
         categories.add("Most Popular")
-        categories.add("All Hotels")
+        categories.add("Top picks")
 
         // Creating adapter for spinner
         val dataAdapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, categories)
@@ -85,7 +85,7 @@ class HotelsListingActivity : AppCompatActivity() {
         spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener{
             override fun onNothingSelected(parent: AdapterView<*>?) {
 
-                tinyDB.putString(TinyDB.SPINNERVALUE, "Top picks")
+                //tinyDB.putString(TinyDB.SPINNERVALUE, "Top picks")
                 tinyDB.putString(TinyDB.SORT_BY, "default")
                 tinyDB.putString(TinyDB.SORTED_VALUE, "Filter")
 

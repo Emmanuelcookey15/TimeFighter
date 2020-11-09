@@ -23,6 +23,7 @@
         android:layout_margin="25dp"
         android:text="Select Room"
         android:textColor="@color/PPR_FULL_WHITE"
+        android:visibility="invisible"
         />
 
 </RelativeLayout>

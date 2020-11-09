@@ -172,8 +172,9 @@
         android:background="@drawable/blue_btn_background"
         android:layout_alignParentBottom="true"
         android:layout_margin="10dp"
-        android:text="Select Room"
+        android:text="@string/select_room"
         android:textColor="@color/PPR_FULL_WHITE"
+        android:visibility="invisible"
         />
 
 
