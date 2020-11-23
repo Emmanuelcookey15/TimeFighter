@@ -478,7 +478,6 @@ class SecureBookingActivity : AppCompatActivity() {
 
         val call: Call<JsonObject> = hotelsngApiService.bookingHotel(theBooking)
 
-
         call.enqueue(object : Callback<JsonObject> {
             override fun onFailure(call: Call<JsonObject>, t: Throwable) {
                 Log.d("bookingData", t.message)

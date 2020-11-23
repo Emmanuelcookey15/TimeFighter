@@ -1,12 +1,13 @@
 apply plugin: 'com.android.application'
 
-apply plugin: 'kotlin-android'
+
+
 
 apply plugin: 'kotlin-android-extensions'
 
-apply plugin: 'kotlin-kapt'
+//apply plugin: 'kotlin-kapt'
 
-apply plugin: 'androidx.navigation.safeargs.kotlin'
+//apply plugin: 'androidx.navigation.safeargs.kotlin'
 
 apply plugin: 'com.google.gms.google-services'
 
@@ -45,9 +46,9 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
-    kotlinOptions {
-        jvmTarget = JavaVersion.VERSION_1_8.toString()
-    }
+//    kotlinOptions {
+//        jvmTarget = JavaVersion.VERSION_1_8.toString()
+//    }
 
 
     dataBinding {
@@ -75,7 +76,7 @@ dependencies {
 
 
     //RoomDb
-    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
+//    kapt "androidx.room:room-compiler:$rootProject.roomVersion"
     implementation "androidx.room:room-ktx:$rootProject.roomVersion"
     implementation "androidx.room:room-runtime:$rootProject.roomVersion"
 
@@ -84,7 +85,7 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$rootProject.glideVersion"
 
     //Material
-    implementation "com.google.android.material:material:$rootProject.materialVersion"
+//    implementation "com.google.android.material:material:$rootProject.materialVersion"
     implementation "androidx.recyclerview:recyclerview:$rootProject.recyclerViewVersion"
     implementation "com.afollestad.material-dialogs:core:$rootProject.material_dialog"
     implementation 'com.afollestad.material-dialogs:bottomsheets:3.1.1'
