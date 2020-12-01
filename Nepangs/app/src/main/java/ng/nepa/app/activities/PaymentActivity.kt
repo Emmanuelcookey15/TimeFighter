@@ -210,7 +210,7 @@ class PaymentActivity : AppCompatActivity() {
                 else -> ""
             }
 
-            if (message == "Customer paid exact amount"){
+            if (message == "Customer paid exact amount") {
                 binding.containerSwipe.isRefreshing = true
                 val bundles = Bundle()
                 bundles.putString(FirebaseAnalytics.Param.CONTENT_TYPE, "Electricity Payment Method")

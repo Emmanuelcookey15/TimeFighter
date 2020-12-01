@@ -180,7 +180,6 @@ class SecureBookingActivity : AppCompatActivity() {
                     .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                     myCalendar.get(Calendar.DAY_OF_MONTH)).show()
 
-
         }
 
         room_check_out_date.setOnClickListener {
