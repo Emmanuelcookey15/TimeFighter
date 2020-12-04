@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Todo List</string>
+    <string name="today">Today</string>
+    <string name="author_name">Mobolaji Onabajo</string>
+    <string name="netid_654726321">NetID: 654726321</string>
+    <string name="about_data">
+        Several students have had to grapple with academic and social failure due to the lack of tech enabled productivity tools.
+        This To Do List application is a tech enable solution that leverages mobile application to help students manage their time and task effectively.
+        We have built an amazing mobile app that enables international students to attain and maintain higher levels of academic success and social performance.
+        The application comes with a seamless user experience and  with the most recent android development technologies and has been made accessible on the Store.
+        The Market Size for productive software stands at $20.3B globally and this app aims for a 50% market share, hence this innovative solution.
+    </string>
+    <string name="about">About</string>
+    <string name="your_task">Your task</string>
+</resources>
